@@ -1,0 +1,99 @@
+
+
+---
+import Layout from "../layouts/Layout.astro";
+const packages = [
+  {
+    title: "Europe Work Permits Package",
+    rating: 4,
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu convallis tortor. Suspendisse potenti...",
+    buttonText: "Book Now",
+  },
+  {
+    title: "New Zealand  100% Visas Package",
+    rating: 5,
+    description: "lorem22 ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu convallis tortor. Suspendisse potenti. Lorem ipsum dolor sit amet...",
+    buttonText: "Book Now",
+  },
+  {
+    title: "Schengen Conference Visas Package",
+    rating: 5,
+    description: "lorem22 ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu convallis tortor. Suspendisse potenti Lorem ipsum dolor sit amet...",
+    buttonText: "Book Now",
+  },
+  {
+    title: "Canada study, visit visa and PR for  health workers Package",
+    rating: 4,
+    description: "lorem lorem22 ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu convallis tortor. Suspendisse potenti ...",
+    buttonText: "Book Now",
+  },
+  {
+    title: "Dubai Luxury Package",
+    rating: 5,
+    description: "lorem22 ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu convallis tortor. Suspendisse potenti...",
+    buttonText: "Book Now",
+  },
+];
+---
+<Layout>
+    
+        
+
+<section class="relative py-12 bg-gradient-to-r from-[#08fef280] via-[#cc13c06f] to-[#fc370088] min-h-screen flex items-center justify-center">
+    <!-- <img 
+      src="https://media.istockphoto.com/id/1328597101/photo/bang-bao-beach-wooden-pier-in-koh-kood-trat-thailand.webp?a=1&b=1&s=612x612&w=0&k=20&c=6RYka994T7s97XKy37d6WMEWiEFzoau_039n4GcA6r8=" 
+      alt="Background" 
+      class="object-cover w-full h-full absolute inset-0"
+    /> -->
+  <div class="w-full max-w-5xl px-4">
+    <div id="carousel" class="relative overflow-hidden">
+      <div id="slides" class="flex transition-transform duration-500 ease-in-out">
+        {packages.map((pkg) => (
+          <div class="min-w-full px-4 flex-shrink-0">
+            <div class="bg-white rounded-lg shadow-lg p-8 flex flex-col justify-between h-full">
+              <div class="mb-4">
+                <h2 class="text-xl font-bold text-center mb-4">{pkg.title}</h2>
+                <div class="flex justify-center mb-4">
+                  {[1, 2, 3, 4, 5].map((i) => (
+                    <span class={`text-xl ${i <= pkg.rating ? 'text-yellow-400' : 'text-gray-300'}`}>★</span>
+                  ))}
+                </div>
+                <p class="text-gray-600 text-center">{pkg.description}</p>
+              </div>
+              <div class="flex justify-center">
+                <button class="bg-gradient-to-r from-orange-400 to-purple-500 text-white font-bold py-2 px-6 rounded-full shadow-lg transition hover:scale-105">
+                  {pkg.buttonText}
+                </button>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Navigation Buttons -->
+      <button id="prevBtn" class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white bg-opacity-50 rounded-full p-2 text-2xl">&#8592;</button>
+      <button id="nextBtn" class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white bg-opacity-50 rounded-full p-2 text-2xl">&#8594;</button>
+    </div>
+  </div>
+</section>
+
+<script type="module" >
+  const slides = document.getElementById("slides");
+  const totalSlides = packages.length;
+  let currentIndex = 0;
+
+  function updateSlide() {
+    slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+  }
+
+  document.getElementById("prevBtn").addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+    updateSlide();
+  });
+
+  document.getElementById("nextBtn").addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % totalSlides;
+    updateSlide();
+  });
+</script>
+</Layout>

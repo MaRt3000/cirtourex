@@ -1,0 +1,66 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-[var(--secondary)] text-[var(--primary)] font-medium py-12 px-6 md:px-16 font-sans">
+  <div class="container mx-auto flex  flex-wrap items-center justify-center md:justify-between gap-2 md:gap-8">
+    
+    <!-- Company Info -->
+    <div class="space-y-4 lg:w-[30%]">
+     <div class="flex flex-col items-center justify-center text-[var(--primary)] font-bold">
+      <h1 class="text-2xl">CIRTOUREX</h1>
+      <p>Global Limited</p>
+    </div>
+      <p class="text-sm leading-relaxed ">
+        Helping individuals and families relocate across borders with ease. From visa processing to settlement support, we're with you every step of the way.
+      </p>
+    </div>
+
+    <!-- Quick Links -->
+    <div>
+      <h4 class="text-lg font-semibold text-[#08fef2] mb-4">Quick Links</h4>
+      <ul class="space-y-2 text-sm flex md:flex-col md:gap-0 gap-4">
+        <li><a href="/" class="hover:text-black transition">Home</a></li>
+        <li><a href="/about" class="hover:text-black transition">About Us</a></li>
+        <li><a href="/services" class="hover:text-black transition">Services</a></li>
+       
+        <li><a href="/contact" class="hover:text-black transition">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Services -->
+    <!-- <div>
+      <h4 class="text-lg font-semibold text-[#08fef2] mb-4">Our Services</h4>
+      <ul class="space-y-2 text-sm">
+        <li>Student Visa Application</li>
+        <li>Global Work Permits</li>
+        <li>Schengen Conference Visas</li>
+        <li>Flight  Booking Services</li>
+        <li>Visa Advisory</li>
+      </ul>
+    </div> -->
+
+    <!-- Contact Info -->
+    <div>
+      <h4 class="text-lg font-semibold text-[#08fef2] mb-4">Get in Touch</h4>
+      <ul class="text-sm space-y-2">
+        <li><strong>Email:</strong> <a href="mailto:glamourb2006@gmail.com" class="hover:text-black transition">glamourb2006@gmail.com</a></li>
+        <li><strong>Phone:</strong> <a href="tel:+2348093917286" class="hover:text-black transition">+2348093917286</a></li>
+  <li>
+    <a href="https://www.google.com/maps/search/?api=1&query=319+Borno+Way,+Alagomeji,+Yaba,+Lagos+State,+Nigeria"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="hover:text-black transition">
+      319, Borno Way, Alagomeji, Yaba, Lagos State, Nigeria
+    </a>
+  </li>
+        
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="border-t border-[gray-700] mt-12 pt-6 text-center text-sm text-[var(--primary)] font-semibold">
+    &copy; {currentYear} Cirtourex Global Limited. All rights reserved.
+  </div>
+</footer>

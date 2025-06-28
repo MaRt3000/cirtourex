@@ -1,0 +1,155 @@
+---
+
+
+---
+
+
+<div id="carousel" class="relative w-full h-full md:h-[900px] overflow-hidden">
+  <!-- Navigation Arrows -->
+  <!-- <button id="prevBtn" class="absolute left-4 top-1/2 transform -translate-y-1/2 z-20 text-white text-4xl">&#10094;</button>
+  <button id="nextBtn" class="absolute right-4 top-1/2 transform -translate-y-1/2 z-20 text-white text-4xl">&#10095;</button> -->
+    
+  <!-- Slides wrapper -->
+  <div id="slides" class="relative w-full h-full md:h-[900px]">
+    <!-- Slide Items -->
+    <div class="slide absolute inset-0 opacity-100 transition-opacity duration-1000 ease-in-out">
+      <img src="https://plus.unsplash.com/premium\_photo-1661344268348-9f598b70e09f?w=900&auto=format&fit=crop&q=60"
+        class="w-full h-full object-cover absolute" alt="Slide 1" />
+      <div class="relative z-10 flex flex-col items-center justify-center h-full text-white text-center px-4">
+        <h1 class="text-4xl md:text-6xl font-bold mb-4 text-[var(--primary)]" style="font-family: var(--fontSecondary);">Begin Your Global Adventure</h1>
+        <p class="text-xl lg:text-3xl mb-8">From visa to takeoff — we handle the journey, you live the dream</p>
+       <a href="/contact"
+          class="bg-[var(--primary)] hover:bg-[#fc0000] py-4 px-8 rounded-full shadow-lg text-white font-semibold text-lg ">
+          Start Planning
+      </a>
+      </div>
+      <div class="h-screen w-full bg-black/40 absolute top-0 left-0 z-0"></div>
+    </div>
+
+    <div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out">
+      <img src="https://plus.unsplash.com/premium_photo-1658506695264-65d2c728d009?w=900&auto=format&fit=crop&q=60"
+        class="w-full h-full object-cover absolute" alt="Slide 2" />
+      <div class="relative z-10 flex flex-col items-center justify-center h-full text-white text-center px-4">
+        <h1 class="text-4xl md:text-6xl font-bold mb-4 text-[var(--primary)]" style="font-family: var(--fontSecondary);">Travel with Confidence</h1>
+        <p class="text-xl lg:text-3xl mb-8">Visa support, curated itineraries, stress-free experience</p>
+        <a href="/contact"
+          class="bg-[var(--primary)] hover:bg-[#fc0000] py-4 px-8 rounded-full shadow-lg text-white font-semibold text-lg ">
+          Book Your Spot
+      </a>
+      </div>
+
+      <div class="h-screen w-full bg-black/40 absolute top-0 left-0 z-0"></div>
+    </div>
+
+    <div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out">
+      <img src="https://plus.unsplash.com/premium_photo-1661290211039-aa59e99f3fcb?w=900&auto=format&fit=crop&q=60"
+        class="w-full h-full object-cover absolute" alt="Slide 3" />
+
+         <div class="relative z-10 flex flex-col items-center justify-center h-full text-white text-center px-4">
+        <h1 class="text-4xl md:text-6xl font-bold mb-4 text-[var(--primary)]" style="font-family: var(--fontSecondary);">Wander Without Limits</h1>
+        <p class="text-xl lg:text-3xl mb-8">Uncover hidden gems and iconic cities — we make it seamless</p>
+       <a href="/contact"
+          class="bg-[var(--primary)] hover:bg-[#fc0000] py-4 px-8 rounded-full shadow-lg text-white font-semibold text-lg ">
+          Explore Now
+         </a>
+      </div>
+     
+      <div class="h-screen w-full bg-black/40 absolute top-0 left-0 z-0"></div>
+    </div>
+
+    <div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out">
+      <img src="https://media.istockphoto.com/id/2199152872/photo/travel-offer-happy-african-american-tourists-couple-pointing-finger-aside-showing-direction.jpg?s=612x612&w=0&k=20&c=wZRJNijskmfK3vTfXmPd3sjk7zVlAX5vBfZnvRLoIYE="
+        class="w-full h-full object-cover absolute" alt="Slide 4" />
+      <div class="relative z-10 flex flex-col items-center justify-center h-full text-white text-center px-4">
+        <h1 class="text-4xl md:text-6xl font-bold mb-4 text-[var(--primary)]" style="font-family: var(--fontSecondary);">Create Moments That Matter</h1>
+        <p class="text-xl lg:text-3xl mb-8">Let's turn your dream destination into a beautiful story</p>
+        <a href="/contact"
+          class="bg-[var(--primary)] hover:bg-[#fc0000] py-4 px-8 rounded-full shadow-lg text-white font-semibold text-lg ">
+          Let's Go!
+      </a>
+      </div>
+      <div class="h-screen w-full bg-black/40 absolute top-0 left-0 z-0"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const slides = document.querySelectorAll(".slide");
+  const carousel = document.getElementById("carousel");
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+
+  let currentSlide = 0;
+  let intervalId: NodeJS.Timeout;
+  let isTransitioning = false;
+
+  function showSlide(index: number) {
+    if (isTransitioning) return;
+    isTransitioning = true;
+    
+    slides.forEach((slide, i) => {
+      slide.classList.toggle("opacity-100", i === index);
+      slide.classList.toggle("opacity-0", i !== index);
+    });
+
+    setTimeout(() => {
+      isTransitioning = false;
+    }, 1000); // Match the transition duration
+  }
+
+  function nextSlide() {
+    if (isTransitioning) return;
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  }
+
+  function prevSlide() {
+    if (isTransitioning) return;
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+  }
+
+  function startAutoplay() {
+    intervalId = setInterval(nextSlide, 5000);
+  }
+
+  function stopAutoplay() {
+    clearInterval(intervalId);
+  }
+
+//   // Event Listeners
+//   if (prevBtn) {
+//     prevBtn.addEventListener("click", () => {
+//       stopAutoplay();
+//       prevSlide();
+//       startAutoplay();
+//     });
+//   }
+
+//   if (nextBtn) {
+//     nextBtn.addEventListener("click", () => {
+//       stopAutoplay();
+//       nextSlide(); 
+//       startAutoplay();
+//     });
+//   }
+
+  // Initialize carousel and start autoplay when DOM is loaded
+  document.addEventListener('DOMContentLoaded', () => {
+    showSlide(currentSlide);
+    startAutoplay();
+  });
+
+  // Pause on hover
+  if (carousel) {
+    carousel.addEventListener("mouseenter", stopAutoplay);
+    carousel.addEventListener("mouseleave", startAutoplay);
+  }
+
+  // Handle transition end
+  slides.forEach(slide => {
+    slide.addEventListener('transitionend', () => {
+      isTransitioning = false;
+    });
+  });
+</script>

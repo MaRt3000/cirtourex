@@ -1,0 +1,116 @@
+---
+import TestimonialCard from '../components/TestimonialCard.astro';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Our Services – Cirtourex Global Limited">
+  <!-- Hero Section -->
+  <section class="bg-white">
+    <div class="carousel w-full">
+  <div class="carousel-item flex items-center justify-center relative w-full h-[500px] md:h-[800px]">
+    <img
+      src="https://media.istockphoto.com/id/2211775126/photo/coworkers-taking-selfies-with-their-passports-and-airplane-tickets-at-the-airport-point-of.jpg?s=612x612&w=0&k=20&c=VjuiDNHx6FVLBL8lncie9ZIW_wdKCSn9piBsCAbDiGM="
+      class="w-full h-full object-cover object-top" />
+
+    <div class="z-10 flex flex-col items-center justify-center absolute inset-0 text-white text-center px-4">
+      <div class="max-w-6xl mx-auto px-4 text-center">
+      <h1 class="text-4xl md:text-6xl font-bold mb-4 text-[var(--primary)]" style="font-family: var(--fontSecondary);">Explore Our Expertise</h1>
+      <p class="text-lg md:text-xl text-white max-w-3xl mx-auto bg-[#06666177] p-6 rounded-3xl">
+        At Cirtourex Global Limited, we transform international aspirations into real-world success. Explore our full suite of immigration and travel services built to guide your journey with precision, transparency, and care.
+      </p>
+    </div>
+    </div>
+  </div>
+</div>
+    
+  </section>
+
+  <!-- Service Index -->
+  <section class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl lg:text-5xl font-bold text-[var(--primary)] text-center  mb-12">What We Do</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Card Template -->
+        <div class="bg-white shadow-md   p-6 rounded-xl hover:shadow-xl transition" >
+          <div class="text-4xl text-teal-600 mb-4">🌍</div>
+          <h3 class="text-xl  font-semibold   mb-2 text-[var(--primary)]">Global Work Permits</h3>
+          <p class="text-gray-500">We offer visa assistance for countries like Luxembourg, Malta, and the UK. We help you navigate work eligibility and documentation with ease.</p>
+        </div>
+
+        <div class="bg-white shadow-md p-6 rounded-xl hover:shadow-xl transition">
+          <div class="text-4xl text-teal-600 mb-4">🇳🇿</div>
+          <h3 class="text-xl font-semibold text-[var(--primary)] mb-2">New Zealand Relocation</h3>
+          <p class="">Guaranteed visa processing support with complete relocation planning for individuals and families moving to New Zealand.</p>
+        </div>
+
+        <div class="bg-white shadow-md p-6 rounded-xl hover:shadow-xl transition">
+          <div class="text-4xl text-teal-600 mb-4">🇪🇺</div>
+          <h3 class="text-xl font-semibold text-[var(--primary)] mb-2">Schengen Conference Visas</h3>
+          <p class="">We help professionals and scholars attend international events with smooth Schengen visa support for conferences and summits.</p>
+        </div>
+
+        <div class="bg-white shadow-md p-6 rounded-xl hover:shadow-xl transition">
+          <div class="text-4xl text-teal-600 mb-4">🇨🇦</div>
+          <h3 class="text-xl font-semibold text-[var(--primary)] mb-2">Canada Immigration</h3>
+          <p class="">Apply for study, visit, or permanent residency (healthcare workers only) with personalized application strategy and end-to-end filing.</p>
+        </div>
+
+        <div class="bg-white shadow-md p-6 rounded-xl hover:shadow-xl transition">
+          <div class="text-4xl text-teal-600 mb-4">✈️</div>
+          <h3 class="text-xl font-semibold text-[var(--primary)] mb-2">Flight Booking Services</h3>
+          <p class="">Secure and cost-effective flight ticketing solutions, coordinated around your visa timeline and destination regulations.</p>
+        </div>
+
+        <div class="bg-white shadow-md p-6 rounded-xl hover:shadow-xl transition">
+          <div class="text-4xl text-teal-600 mb-4">🧭</div>
+          <h3 class="text-xl font-semibold text-[var(--primary)] mb-2">Visa Advisory</h3>
+          <p class="">Not sure what you qualify for? Our experts evaluate your profile and recommend the best visa pathways to achieve your goals.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<TestimonialCard />
+
+
+  <!-- FAQ SECTION -->
+  <section class="py-20 bg-gradient-to-br from-teal-50 to-white">
+    <div class="max-w-5xl mx-auto px-4">
+      <h2 class="text-2xl lg:text-5xl text-[var(--primary)] font-bold text-center mb-12">Frequently Asked Questions</h2>
+      <div class="space-y-6">
+        {[
+          ["How long does visa processing take?", "Depending on the country, between 2–8 weeks. We’ll advise on your specific case."],
+          ["Can I apply if I’ve been denied before?", "Yes, we help with visa re-application strategies and documentation corrections."],
+          ["What documents do I need?", "It depends on your destination and visa type. We’ll provide a checklist after your consultation."],
+          ["Do you offer express visa services?", "Yes, we support expedited visa options for eligible countries and urgent cases."],
+          ["Can I trust you with my passport?", "Absolutely. We follow strict data and document protection standards."],
+          ["Do you help with job matching?", "We assist with visa types related to jobs, but don’t provide recruitment services."],
+          ["How do I know I’m eligible?", "We offer free assessments to check your visa or residency eligibility."],
+          ["Do you offer services outside Nigeria?", "Yes! We serve clients worldwide through virtual consultations."],
+          ["Can I get both visa and flight booking from you?", "Yes, we provide full relocation packages including booking, paperwork, and follow-up."],
+          ["Do you give refund if visa is denied?", "We refund unused service charges in some cases. Consult terms before signing."],
+        ].map(([q, a], index) => (
+          <details class="bg-white rounded-lg shadow-sm p-4 group">
+            <summary class="cursor-pointer text-lg font-semibold  group-open:text-teal-700">
+              {q}
+            </summary>
+            <p class="mt-2 ">{a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="text-center py-16 bg-white">
+    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-[var(--primary)]">Start Your Journey With Confidence</h2>
+    <p class="text-lg mb-8 max-w-2xl mx-auto">Let Cirtourex Global Limited be your partner in global relocation. Consult us today and take the first step toward your international future.</p>
+    <a href="/contact" class="inline-block bg-[var(--primary)] text-white px-8 py-4 rounded-full text-lg shadow hover:bg-[#fc0000] transition-colors duration-300">
+      Book a Consultation
+    </a>
+  </section>
+
+  
+</Layout>
+
+

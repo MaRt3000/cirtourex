@@ -1,0 +1,245 @@
+---
+
+const destinations = [
+  {
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuGEM8LCsIbEIp092PO_dKC43rUc_iF0JBHw&s',
+    title: 'Luxembourg',
+    description: 'A small yet beautiful country in Europe known for its rich history and culture.',
+  },
+  {
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFuZKrJNhApw6QGGrPD8HKK1rMAcJ14fDmLQ&s',
+    title: 'Malta',
+    description: 'A beautiful island nation in the Mediterranean with rich history and culture.',
+  },
+   {
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBBVrzAcOzXtUDVjWso4nxgOHkQH1XjYfkZw&s',
+    title: 'Canada',
+    description: 'A vast country known for its natural beauty and multicultural cities.',
+  },
+  {
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_Q4l3RyFeMOis4pXJfNhOJ0aRBKC9SyMXSg&s',
+    title: 'United Kingdom',
+    description: 'A country rich in history, culture, and natural beauty.',
+  },
+  {
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmbdZz7SiBbZ4Ox-6jVIA3CCMVsHxQ9ozVvg&s',
+    title: 'Newzealand ',
+    description: 'Known for its stunning landscapes and vibrant culture.',
+    
+  },
+ 
+  {
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJxmOyW3ApaLK01-e6er4a5aUbNs53vVw0jQ&s',
+    title: 'Schengen Area',
+    description: 'A group of European countries with open borders for travel.',
+   
+  },
+];
+
+---
+
+
+
+
+
+
+<section>
+    <div class="container mx-auto px-4 py-12 space-y-4">
+    <div class="space-y-2 flex flex-col items-center justify-start ">
+        <h3 class="text-xl lg:text-3xl  font-semibold text-[var(--primary)]">Our</h3>
+        <h2 class="text-2xl lg:text-5xl font-bold  text-[var(--primary)]">Popular Destinations</h2>
+    </div>
+    <p class=" text-xl lg:text-2xl text-center mb-12">Explore our most popular travel destinations around the world</p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {destinations.map((destination) => (
+            <div class="relative rounded-lg overflow-hidden ">
+                <img src={destination.image} alt={destination.title} class="w-full h-88 object-cover" />
+                <div class="absolute bottom-0 left-0 w-full bg-[#fc370099] font-semibold bg-opacity-50 text-[var(--secondary)] p-4">
+                    <h3 class="text-lg font-bold">{destination.title}</h3>
+                    <p class="text-sm">{destination.description}</p>
+                </div>
+            </div>
+        ))}
+    </div>
+
+    
+</div>
+
+               <!-- CIRTOURES PACKAGES SECTION -->
+
+        
+  <div class="w-full min-h-screen relative">
+    <img 
+      src="https://media.istockphoto.com/id/1328597101/photo/bang-bao-beach-wooden-pier-in-koh-kood-trat-thailand.webp?a=1&b=1&s=612x612&w=0&k=20&c=6RYka994T7s97XKy37d6WMEWiEFzoau_039n4GcA6r8=" 
+      alt="Background" 
+      class="object-cover w-full h-full absolute inset-0"
+    />
+
+    <div class="absolute inset-0 bg-gradient-to-r from-[#08fef280] via-[#cc13c06f] to-[#fc370088]"></div>
+
+    <div class="container mx-auto relative  h-screen flex items-center justify-center">
+      <div class="w-full px-4 md:px-8   ">
+        <div class="text-center  absolute top-1/9 lg:top-1/7 left-0 right-0 z-10">
+          <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Cirtourex Packages</h2>
+          <div class="w-24 h-1 bg-red-500 mx-auto"></div>
+        </div>
+
+        <div class="carousel items-center  flex justify-center mx-auto p-6 md:p-12">
+  <div class="carousel w-full py-10">
+    <div id="card1" class="carousel-item  w-full items-center flex justify-center h-screen">
+      <div class="flex flex-col relative w-full py-20 items-center  bg-white rounded-xl shadow-2xl">
+        <div class="text-center max-w-2xl mx-auto">
+          <h3 class="text-xl text-[var(--primary)] md:text-2xl font-bold mb-4">Global Work Permits Package</h3>
+          <div class="flex justify-center mb-4">
+            {[1, 2, 3, 4, 5].map((star, index) => (
+              <span class={`text-xl ${index < 4 ? 'text-yellow-400' : 'text-gray-400'}`}>★</span>
+            ))}
+          </div>
+          <p class="text-gray-600 text-base md:text-lg leading-relaxed">
+            "We offer visa assistance for countries like Luxembourg, Malta, and the UK. We help you navigate work eligibility and documentation with ease...."
+          </p>
+          <a href="/contact" class="inline-block mt-4 px-8 py-4 bg-[var(--primary)] text-white rounded-full hover:bg-[#fc0000] transition-colors duration-300">More Info</a>
+        </div>
+         <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+        <a href="#card5" class="bg-opacity-50 text-[var(--primary)] rounded-full text-2xl border-none hover:text-red-700">❮</a>
+        <a href="#card2" class="bg-opacity-50 text-[var(--primary)] rounded-full text-2xl border-none hover:text-red-700">❯</a>
+      </div>
+      </div>
+     
+    </div>
+
+    <div id="card2" class="carousel-item h-screen w-full items-center flex justify-center">
+      <div class="flex flex-col items-center bg-white rounded-xl shadow-2xl relative w-full py-20">
+        <div class="text-center max-w-2xl mx-auto">
+          <h3 class="text-xl text-[var(--primary)] md:text-2xl font-bold mb-4">New Zealand  100% Visas Package</h3>
+          <div class="flex justify-center mb-4">
+            {[1, 2, 3, 4, 5].map((star, index) => (
+              <span class={`text-xl ${index < 5 ? 'text-yellow-400' : 'text-gray-400'}`}>★</span>
+            ))}
+          </div>
+          <p class="text-gray-600 text-sm md:text-base leading-relaxed">
+            "Guaranteed visa processing support with complete relocation planning for individuals and families moving to New Zealand...."
+          </p>
+          <a href="/contact" class="inline-block mt-4 px-8 py-4 bg-[var(--primary)] text-white rounded-full hover:bg-[#fc0000] transition-colors duration-300">More Info</a>
+        </div>
+         <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+        <a href="#card1" class="bg-opacity-50 rounded-full text-2xl border-none hover:text-red-700 text-[var(--primary)]">❮</a>
+        <a href="#card3" class="bg-opacity-50 rounded-full text-2xl border-none hover:text-red-700 text-[var(--primary)]">❯</a>
+      </div>
+      </div>
+     
+    </div>
+
+    <div id="card3" class="carousel-item h-screen w-full items-center flex justify-center">
+      <div class="flex flex-col items-center  bg-white rounded-xl shadow-2xl relative w-full py-20">
+        <div class="text-center max-w-2xl mx-auto">
+          <h3 class="text-xl text-[var(--primary)] md:text-2xl font-bold mb-4">Schengen Conference Visas Package</h3>
+          <div class="flex justify-center mb-4">
+            {[1, 2, 3, 4, 5].map((star, index) => (
+              <span class={`text-xl ${index < 5 ? 'text-yellow-400' : 'text-gray-400'}`}>★</span>
+            ))}
+          </div>
+          <p class="text-gray-600 text-sm md:text-base leading-relaxed">
+           "We help professionals and scholars attend international events with smooth Schengen visa support for conferences and summits...."
+          </p>
+          <a href="/contact" class="inline-block mt-4 px-8 py-4 bg-[var(--primary)] text-white rounded-full hover:bg-[#fc0000] transition-colors duration-300">More Info</a>
+        </div>
+        <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+        <a href="#card2" class="bg-opacity-50 rounded-full text-2xl border-none hover:text-red-700 text-[var(--primary)]">❮</a>
+        <a href="#card4" class="bg-opacity-50 rounded-full text-2xl border-none hover:text-red-700 text-[var(--primary)]">❯</a>
+      </div>
+      </div>
+      
+    </div>
+
+    <div id="card4" class="carousel-item h-screen w-full items-center flex justify-center">
+      <div class="flex flex-col items-center  bg-white rounded-xl shadow-2xl relative w-full py-20">
+        <div class="text-center max-w-2xl mx-auto">
+          <h3 class="text-xl text-[var(--primary)] md:text-2xl font-bold mb-4">Canada study, visit visa and PR for  health workers Package</h3>
+          <div class="flex justify-center mb-4">
+            {[1, 2, 3, 4, 5].map((star, index) => (
+              <span class={`text-xl ${index < 4 ? 'text-yellow-400' : 'text-gray-400'}`}>★</span>
+            ))}
+          </div>
+          <p class="text-gray-600 text-sm md:text-base leading-relaxed">
+            "Apply for study, visit, or permanent residency (healthcare workers only) with personalized application strategy and end-to-end filing..."
+          </p>
+          <a href="/contact" class="inline-block mt-4 px-8 py-4 bg-[var(--primary)] text-white rounded-full hover:bg-[#fc0000] transition-colors duration-300">More Info</a>
+        </div>
+         <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+        <a href="#card3" class="bg-opacity-50 rounded-full text-2xl border-none hover:text-red-700 text-[var(--primary)]">❮</a>
+        <a href="#card5" class="bg-opacity-50 rounded-full text-2xl border-none hover:text-red-700 text-[var(--primary)]">❯</a>
+      </div>
+      </div>
+     
+    </div>
+
+
+    <div id="card5" class="carousel-item relative w-full items-center flex justify-center">
+      <div class="flex flex-col items-center bg-white rounded-xl shadow-2xl relative w-full py-20">
+        <div class="text-center max-w-2xl mx-auto">
+          <h3 class="text-xl text-[var(--primary)] md:text-2xl font-bold mb-4">Flight Booking Services Package</h3>
+          <div class="flex justify-center mb-4">
+            {[1, 2, 3, 4, 5].map((star, index) => (
+              <span class={`text-xl ${index < 5 ? 'text-yellow-400' : 'text-gray-400'}`}>★</span>
+            ))}
+          </div>
+          <p class="text-gray-600 text-sm md:text-base leading-relaxed">
+            "Secure and cost-effective flight ticketing solutions, coordinated around your visa timeline and destination regulations..."
+          </p>
+          <a href="/contact" class="inline-block mt-4 px-8 py-4 bg-[var(--primary)] text-white rounded-full hover:bg-[#fc0000] transition-colors duration-300">More Info</a>
+        </div>
+        <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+        <a href="#card4" class="bg-opacity-50 rounded-full text-2xl border-none hover:text-red-700 text-[var(--primary)]">❮</a>
+        <a href="#card1" class="bg-opacity-50 rounded-full text-2xl border-none hover:text-red-700 text-[var(--primary)]">❯</a>
+      </div>
+      </div>
+      
+    </div>
+  </div>
+</div>    
+  </div>
+    </div>
+  </div>
+
+
+                    <!-- ABOUT US SECTION -->
+<div class=" pt-[5rem] pb-20">
+    <div class="flex flex-wrap container   mx-auto items-center justify-center   ">
+  <!-- Left Image Section -->
+  <div class="md:w-1/2 w-full rounded-2xl  h-[100%]">
+    <img src="https://plus.unsplash.com/premium_photo-1663054311916-98ef24980a37?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cGFzc3BvcnR8ZW58MHx8MHx8fDA%3D" alt="about us" 
+      class="w-full h-[100%]  rounded-2xl "
+    />
+  </div>
+
+  <!-- Right Content Section -->
+  <div class="md:w-1/2 w-full p-12 flex flex-col justify-center space-y-1">
+    <p class="italic mb-3 font-medium text-[var(--primary)] text-lg">a few words</p>
+    <h2 class="text-5xl font-bold mb-6 text-[var(--primary)]">About <span class="">Us</span></h2>
+    <p class="flex flex-col space-y-1 text-lg leading-relaxed">
+     Cirtourex Global Limited is a trusted travel agency consulting firm, committed to helping individuals and professionals achieve their global travel and career ambitions. We specialize in providing expert guidance and seamless processing for a wide range of visas and immigration services.
+     <span>At Cirtourex Global Limited, we combine deep industry knowledge with personalized consulting to ensure every client experiences a smooth, transparent, and successful application process.
+
+Motto: Result is our aim
+
+When you choose us, you are not just selecting a service — you are partnering with a team dedicated to turning your travel goals into reality.</span>
+    </p>
+    <a
+      href="/about"
+      class="bg-[var(--primary)] text-white py-4 px-8 rounded-full mt-6 hover:bg-[#fc0000] transition-colors duration-300 w-fit flex items-center gap-4 text-lg">Learn More
+        <span class="text-lg">→</span>
+    </a>
+  </div>
+</div>
+       
+        
+ </div>
+    
+
+
+
+    
+</section>
+    
