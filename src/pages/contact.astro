@@ -4,24 +4,34 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="Contact Us – Cirtourex Global Limited">
   <!-- Hero Section -->
-  <section class="relative h-[500px] md:h-[600px] overflow-hidden">
+  <section class="relative h-[80vh] overflow-hidden">
     <img
       src="https://plus.unsplash.com/premium_photo-1661301206658-221bc7dbe361?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDIxfHx8ZW58MHx8fHx8"
       class="w-full h-full object-cover" 
       alt="Contact Us"
     />
-    <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/70"></div>
+    <div class="absolute inset-0 bg-black/70"></div>
     
-    <div class="relative z-10 flex flex-col items-center justify-center h-full text-white text-center px-4">
+    <div class="absolute top-0 left-0 w-full  z-50  h-full text-white text-center px-4">
+     <div class="flex flex-col items-center justify-center h-full pt-[20vh]">
       <div class="max-w-4xl mx-auto">
         <h1 class="text-4xl md:text-6xl font-bold mb-6 text-white leading-tight">
-          Let's 
+        <span class="text-white">  Let's </span>
           <span class="gradient-text">Talk!</span>
         </h1>
-        <p class="text-lg md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-          Whether you need visa guidance, immigration support, or travel insights — we're here to help with speed, clarity, and a smile!
+        <p class="text-lg md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-8">
+        <span class="text-white"> Whether you need visa guidance, immigration support, or travel insights — we're here to help with speed, clarity, and a smile!</span>
         </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mt-5">
+          <a href="tel:+2348093917286" class="btn-primary text-lg px-8 py-4">
+            Call Us Now
+          </a>
+          <a href="mailto:glamourb2006@gmail.com" class="btn-outline text-lg px-8 py-4">
+            Send Email
+          </a>
+        </div>
       </div>
+     </div>
     </div>
   </section>
 
@@ -38,7 +48,7 @@ import Layout from '../layouts/Layout.astro';
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
         <!-- Office Location -->
-        <div class="contact-card card p-8 text-center group">
+        <div class="contact-card shadow-xs border border-gray-200 p-8 text-center group">
           <div class="w-16 h-16 bg-gradient-to-br from-var(--primary)/10 to-var(--secondary)/10 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300">
             <svg class="w-8 h-8 text-var(--primary)" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
@@ -57,7 +67,7 @@ import Layout from '../layouts/Layout.astro';
         </div>
 
         <!-- Phone -->
-        <div class="contact-card card p-8 text-center group">
+        <div class="contact-card shadow-xs border border-gray-200 p-8 text-center group">
           <div class="w-16 h-16 bg-gradient-to-br from-var(--primary)/10 to-var(--secondary)/10 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300">
             <svg class="w-8 h-8 text-var(--primary)" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
@@ -71,7 +81,7 @@ import Layout from '../layouts/Layout.astro';
         </div>
 
         <!-- Email -->
-        <div class="contact-card card p-8 text-center group">
+        <div class="contact-card shadow-xs border border-gray-200 p-8 text-center group">
           <div class="w-16 h-16 bg-gradient-to-br from-var(--primary)/10 to-var(--secondary)/10 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300">
             <svg class="w-8 h-8 text-var(--primary)" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
@@ -103,7 +113,8 @@ import Layout from '../layouts/Layout.astro';
   <!-- Support Promise -->
   <section class="section-alt">
     <div class="container">
-      <div class="text-center mb-16">
+     <div class="py-10">
+      <div class="text-center mb-16 ">
         <h3 class="text-lg font-semibold text-var(--primary) mb-2 uppercase tracking-wider">Our Promise</h3>
         <h2 class="text-3xl md:text-4xl font-bold text-var(--text-primary) mb-6">Our Support Promise</h2>
         <p class="text-xl text-var(--text-secondary) max-w-3xl mx-auto">
@@ -112,7 +123,7 @@ import Layout from '../layouts/Layout.astro';
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="promise-card card p-8 group">
+        <div class="promise-card shadow-xs border border-gray-200 p-8 group">
           <div class="flex items-start space-x-4">
             <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-var(--primary) to-var(--primary-dark) rounded-full flex items-center justify-center text-white font-bold group-hover:scale-110 transition-transform duration-300">
               ✓
@@ -124,7 +135,7 @@ import Layout from '../layouts/Layout.astro';
           </div>
         </div>
 
-        <div class="promise-card card p-8 group">
+        <div class="promise-card shadow-xs border border-gray-200 p-8 group">
           <div class="flex items-start space-x-4">
             <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-var(--primary) to-var(--primary-dark) rounded-full flex items-center justify-center text-white font-bold group-hover:scale-110 transition-transform duration-300">
               ✓
@@ -136,7 +147,7 @@ import Layout from '../layouts/Layout.astro';
           </div>
         </div>
 
-        <div class="promise-card card p-8 group">
+        <div class="promise-card shadow-xs border border-gray-200 p-8 group">
           <div class="flex items-start space-x-4">
             <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-var(--primary) to-var(--primary-dark) rounded-full flex items-center justify-center text-white font-bold group-hover:scale-110 transition-transform duration-300">
               ✓
@@ -148,7 +159,7 @@ import Layout from '../layouts/Layout.astro';
           </div>
         </div>
 
-        <div class="promise-card card p-8 group">
+        <div class="promise-card shadow-xs border border-gray-200 p-8 group">
           <div class="flex items-start space-x-4">
             <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-var(--primary) to-var(--primary-dark) rounded-full flex items-center justify-center text-white font-bold group-hover:scale-110 transition-transform duration-300">
               ✓
@@ -160,6 +171,7 @@ import Layout from '../layouts/Layout.astro';
           </div>
         </div>
       </div>
+     </div>
     </div>
   </section>
 
@@ -175,7 +187,7 @@ import Layout from '../layouts/Layout.astro';
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="team-card card p-8 text-center group">
+        <div class="team-card shadow-xs border border-gray-200 p-8 text-center group">
           <div class="relative mb-6">
             <img 
               src="/images/team1.jpg" 
@@ -193,7 +205,7 @@ import Layout from '../layouts/Layout.astro';
           </div>
         </div>
 
-        <div class="team-card card p-8 text-center group">
+        <div class="team-card shadow-xs border border-gray-200 p-8 text-center group">
           <div class="relative mb-6">
             <img 
               src="https://images.unsplash.com/photo-1579038773867-044c48829161?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEzfHx8ZW58MHx8fHx8" 
@@ -211,7 +223,7 @@ import Layout from '../layouts/Layout.astro';
           </div>
         </div>
 
-        <div class="team-card card p-8 text-center group">
+        <div class="team-card shadow-xs border border-gray-200 p-8 text-center group">
           <div class="relative mb-6">
             <img 
               src="https://plus.unsplash.com/premium_photo-1688350839154-1a131bccd78a?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDI3fHx8ZW58MHx8fHx8" 
@@ -260,6 +272,7 @@ import Layout from '../layouts/Layout.astro';
 
 .promise-card {
   transition: all var(--transition-normal);
+  height: 180px;
 }
 
 .promise-card:hover {

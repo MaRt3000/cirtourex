@@ -5,24 +5,34 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="Our Services – Cirtourex Global Limited">
   <!-- Hero Section -->
-  <section class="relative h-[500px] md:h-[600px] overflow-hidden">
+  <section class="relative h-[80vh] overflow-hidden">
     <img
       src="https://media.istockphoto.com/id/2211775126/photo/coworkers-taking-selfies-with-their-passports-and-airplane-tickets-at-the-airport-point-of.jpg?s=612x612&w=0&k=20&c=VjuiDNHx6FVLBL8lncie9ZIW_wdKCSn9piBsCAbDiGM="
       class="w-full h-full object-cover object-top" 
       alt="Our Services"
     />
-    <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/70"></div>
+    <div class="absolute inset-0 bg-black/70"></div>
     
-    <div class="relative z-10 flex flex-col items-center justify-center h-full text-white text-center px-4">
-      <div class="max-w-4xl mx-auto">
-        <h1 class="text-4xl md:text-6xl font-bold mb-6 text-white leading-tight">
-          Explore Our 
-          <span class="gradient-text">Expertise</span>
-        </h1>
-        <p class="text-lg md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-        At Cirtourex Global Limited, we transform international aspirations into real-world success. Explore our full suite of immigration and travel services built to guide your journey with precision, transparency, and care.
-      </p>
-    </div>
+    <div class="absolute top-0 left-0 w-full z-50 h-full text-white text-center px-4">
+      <div class="flex flex-col items-center justify-center h-full pt-[20vh]">
+        <div class="max-w-4xl mx-auto">
+          <h1 class="text-4xl md:text-6xl font-bold mb-6 text-white leading-tight">
+            <span class="text-white">Explore Our</span>
+            <span class="gradient-text">Expertise</span>
+          </h1>
+          <p class="text-lg md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-8">
+            <span class="text-white">At Cirtourex Global Limited, we transform international aspirations into real-world success. Explore our full suite of immigration and travel services built to guide your journey with precision, transparency, and care.</span>
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mt-5">
+            <a href="/contact" class="btn-primary text-lg px-8 py-4">
+              Book a Consultation
+            </a>
+            <a href="/about" class="btn-outline text-lg px-8 py-4">
+              Learn More About Us
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -39,7 +49,7 @@ import Layout from '../layouts/Layout.astro';
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- Global Work Permits -->
-        <div class="service-card card p-8 group">
+        <div class="service-card shadow-xs border border-gray-200 p-8 group">
           <div class="w-16 h-16 bg-gradient-to-br from-var(--primary)/10 to-var(--secondary)/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
             <span class="text-3xl">🌍</span>
           </div>
@@ -68,7 +78,7 @@ import Layout from '../layouts/Layout.astro';
         </div>
 
         <!-- New Zealand Relocation -->
-        <div class="service-card card p-8 group">
+        <div class="service-card shadow-xs border border-gray-200 p-8 group">
           <div class="w-16 h-16 bg-gradient-to-br from-var(--primary)/10 to-var(--secondary)/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
             <span class="text-3xl">🇳🇿</span>
           </div>
@@ -97,7 +107,7 @@ import Layout from '../layouts/Layout.astro';
         </div>
 
         <!-- Schengen Conference Visas -->
-        <div class="service-card card p-8 group">
+        <div class="service-card shadow-xs border border-gray-200 p-8 group">
           <div class="w-16 h-16 bg-gradient-to-br from-var(--primary)/10 to-var(--secondary)/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
             <span class="text-3xl">🇪🇺</span>
           </div>
@@ -126,7 +136,7 @@ import Layout from '../layouts/Layout.astro';
         </div>
 
         <!-- Canada Immigration -->
-        <div class="service-card card p-8 group">
+        <div class="service-card shadow-xs border border-gray-200 p-8 group">
           <div class="w-16 h-16 bg-gradient-to-br from-var(--primary)/10 to-var(--secondary)/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
             <span class="text-3xl">🇨🇦</span>
           </div>
@@ -155,7 +165,7 @@ import Layout from '../layouts/Layout.astro';
         </div>
 
         <!-- Flight Booking Services -->
-        <div class="service-card card p-8 group">
+        <div class="service-card shadow-xs border border-gray-200 p-8 group">
           <div class="w-16 h-16 bg-gradient-to-br from-var(--primary)/10 to-var(--secondary)/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
             <span class="text-3xl">✈️</span>
           </div>
@@ -184,7 +194,7 @@ import Layout from '../layouts/Layout.astro';
         </div>
 
         <!-- Visa Advisory -->
-        <div class="service-card card p-8 group">
+        <div class="service-card shadow-xs border border-gray-200 p-8 group">
           <div class="w-16 h-16 bg-gradient-to-br from-var(--primary)/10 to-var(--secondary)/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
             <span class="text-3xl">🧭</span>
           </div>
@@ -218,7 +228,8 @@ import Layout from '../layouts/Layout.astro';
 <TestimonialCard />
 
   <!-- FAQ SECTION -->
-  <section class="section-alt">
+  <section class="section-alt ">
+   <div class="bg-white py-14">
     <div class="container">
       <div class="text-center mb-16">
         <h3 class="text-lg font-semibold text-var(--primary) mb-2 uppercase tracking-wider">FAQ</h3>
@@ -241,7 +252,7 @@ import Layout from '../layouts/Layout.astro';
           ["Can I get both visa and flight booking from you?", "Yes, we provide full relocation packages including booking, paperwork, and follow-up support throughout your journey."],
           ["Do you give refund if visa is denied?", "We refund unused service charges in some cases. Our terms are transparent and we discuss refund policies before engagement."],
         ].map(([q, a], index) => (
-          <details class="faq-item card p-6 group cursor-pointer">
+          <details class="faq-item shadow-xs border border-gray-200 p-6 group cursor-pointer">
             <summary class="cursor-pointer text-lg font-semibold text-var(--text-primary) group-open:text-var(--primary) transition-colors flex items-center justify-between">
               {q}
               <svg class="w-5 h-5 transform group-open:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -253,6 +264,7 @@ import Layout from '../layouts/Layout.astro';
         ))}
       </div>
     </div>
+   </div>
   </section>
 
   <!-- Final CTA -->
@@ -277,21 +289,12 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <style>
-.service-card {
-  transition: all var(--transition-normal);
-}
 
-.service-card:hover {
-  transform: translateY(-8px);
-}
 
-.faq-item {
-  transition: all var(--transition-normal);
-}
 
-.faq-item:hover {
-  box-shadow: var(--shadow-xl);
-}
+
+
+
 
 .faq-item[open] {
   border-color: var(--primary);
