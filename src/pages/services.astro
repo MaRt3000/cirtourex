@@ -5,7 +5,7 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="Our Services – Cirtourex Global Limited">
   <!-- Hero Section -->
-  <section class="relative h-[80vh] overflow-hidden">
+  <section class="relative h-[88vh] overflow-hidden">
     <img
       src="https://media.istockphoto.com/id/2211775126/photo/coworkers-taking-selfies-with-their-passports-and-airplane-tickets-at-the-airport-point-of.jpg?s=612x612&w=0&k=20&c=VjuiDNHx6FVLBL8lncie9ZIW_wdKCSn9piBsCAbDiGM="
       class="w-full h-full object-cover object-top" 
@@ -48,13 +48,47 @@ import Layout from '../layouts/Layout.astro';
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Canada Immigration -->
+        <div class="service-card shadow-xs border border-gray-200 p-8 group">
+          <div class="w-16 h-16 bg-gradient-to-br from-var(--primary)/10 to-var(--secondary)/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <span class="text-3xl">🇨🇦</span>
+          </div>
+          <h3 class="text-xl font-semibold text-var(--text-primary) mb-4 group-hover:text-var(--primary) transition-colors">
+            Canada Immigration
+          </h3>
+          <p class="text-var(--text-secondary) leading-relaxed">
+            Apply for study, visit, or permanent residency (healthcare workers only) with personalized application strategy and end-to-end filing.
+          </p>
+          <div class="mt-6 pt-4 border-t border-var(--border)">
+            <ul class="space-y-2 text-sm text-var(--text-secondary)">
+              <li class="flex items-center">
+                <span class="w-2 h-2 bg-var(--primary) rounded-full mr-3"></span>
+                Work Visas
+              </li>
+              <li class="flex items-center">
+                <span class="w-2 h-2 bg-var(--primary) rounded-full mr-3"></span>
+                Study Visas
+              </li>
+              <li class="flex items-center">
+                <span class="w-2 h-2 bg-var(--primary) rounded-full mr-3"></span>
+                Visit Visas
+              </li>
+              <li class="flex items-center">
+                <span class="w-2 h-2 bg-var(--primary) rounded-full mr-3"></span>
+                Healthcare PR
+              </li>
+            </ul>
+          </div>
+        </div>
+
         <!-- Global Work Permits -->
         <div class="service-card shadow-xs border border-gray-200 p-8 group">
           <div class="w-16 h-16 bg-gradient-to-br from-var(--primary)/10 to-var(--secondary)/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
             <span class="text-3xl">🌍</span>
           </div>
           <h3 class="text-xl font-semibold text-var(--text-primary) mb-4 group-hover:text-var(--primary) transition-colors">
-            Global Work Permits
+            Europe Work Permits
           </h3>
           <p class="text-var(--text-secondary) leading-relaxed">
             We offer visa assistance for countries like Luxembourg, Malta, and the UK. We help you navigate work eligibility and documentation with ease.
@@ -135,34 +169,7 @@ import Layout from '../layouts/Layout.astro';
           </div>
         </div>
 
-        <!-- Canada Immigration -->
-        <div class="service-card shadow-xs border border-gray-200 p-8 group">
-          <div class="w-16 h-16 bg-gradient-to-br from-var(--primary)/10 to-var(--secondary)/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-            <span class="text-3xl">🇨🇦</span>
-          </div>
-          <h3 class="text-xl font-semibold text-var(--text-primary) mb-4 group-hover:text-var(--primary) transition-colors">
-            Canada Immigration
-          </h3>
-          <p class="text-var(--text-secondary) leading-relaxed">
-            Apply for study, visit, or permanent residency (healthcare workers only) with personalized application strategy and end-to-end filing.
-          </p>
-          <div class="mt-6 pt-4 border-t border-var(--border)">
-            <ul class="space-y-2 text-sm text-var(--text-secondary)">
-              <li class="flex items-center">
-                <span class="w-2 h-2 bg-var(--primary) rounded-full mr-3"></span>
-                Study Visas
-              </li>
-              <li class="flex items-center">
-                <span class="w-2 h-2 bg-var(--primary) rounded-full mr-3"></span>
-                Visit Visas
-              </li>
-              <li class="flex items-center">
-                <span class="w-2 h-2 bg-var(--primary) rounded-full mr-3"></span>
-                Healthcare PR
-              </li>
-            </ul>
-          </div>
-        </div>
+        
 
         <!-- Flight Booking Services -->
         <div class="service-card shadow-xs border border-gray-200 p-8 group">
@@ -241,7 +248,7 @@ import Layout from '../layouts/Layout.astro';
 
       <div class="max-w-4xl mx-auto space-y-4">
         {[
-          ["How long does visa processing take?", "Depending on the country, between 2–8 weeks. We'll advise on your specific case and provide realistic timelines based on current processing times."],
+          ["How long does visa processing take?", "Depending on the country, between 1–4 Months. We'll advise on your specific case and provide realistic timelines based on current processing times."],
           ["Can I apply if I've been denied before?", "Yes, we help with visa re-application strategies and documentation corrections. Our experts analyze previous applications to identify and address issues."],
           ["What documents do I need?", "It depends on your destination and visa type. We'll provide a comprehensive checklist after your consultation and guide you through document preparation."],
           ["Do you offer express visa services?", "Yes, we support expedited visa options for eligible countries and urgent cases. We'll assess your situation and recommend the best approach."],
