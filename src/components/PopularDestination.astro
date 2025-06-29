@@ -5,197 +5,449 @@ const destinations = [
     image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuGEM8LCsIbEIp092PO_dKC43rUc_iF0JBHw&s',
     title: 'Luxembourg',
     description: 'A small yet beautiful country in Europe known for its rich history and culture.',
+    category: 'Europe'
   },
   {
     image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFuZKrJNhApw6QGGrPD8HKK1rMAcJ14fDmLQ&s',
     title: 'Malta',
     description: 'A beautiful island nation in the Mediterranean with rich history and culture.',
+    category: 'Europe'
   },
    {
     image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBBVrzAcOzXtUDVjWso4nxgOHkQH1XjYfkZw&s',
     title: 'Canada',
     description: 'A vast country known for its natural beauty and multicultural cities.',
+    category: 'North America'
   },
   {
     image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_Q4l3RyFeMOis4pXJfNhOJ0aRBKC9SyMXSg&s',
     title: 'United Kingdom',
     description: 'A country rich in history, culture, and natural beauty.',
+    category: 'Europe'
   },
   {
     image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmbdZz7SiBbZ4Ox-6jVIA3CCMVsHxQ9ozVvg&s',
-    title: 'Newzealand ',
+    title: 'New Zealand',
     description: 'Known for its stunning landscapes and vibrant culture.',
-    
+    category: 'Oceania'
   },
- 
   {
     image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJxmOyW3ApaLK01-e6er4a5aUbNs53vVw0jQ&s',
     title: 'Schengen Area',
     description: 'A group of European countries with open borders for travel.',
-   
+    category: 'Europe'
   },
 ];
 
 ---
 
-
-
-
-
-
-<section>
-    <div class="container mx-auto px-4 py-12 space-y-4">
-    <div class="space-y-2 flex flex-col items-center justify-start ">
-        <h3 class="text-xl lg:text-3xl  font-semibold text-[var(--primary)]">Our</h3>
-        <h2 class="text-2xl lg:text-5xl font-bold  text-[var(--primary)]">Popular Destinations</h2>
+<section class="section section-alt">
+  <div class="container">
+    <div class="text-center mb-16">
+      <h3 class="text-lg font-semibold text-var(--primary) mb-2 uppercase tracking-wider">Our</h3>
+      <h2 class="text-4xl md:text-5xl font-bold text-var(--text-primary) mb-6">Popular Destinations</h2>
+      <p class="text-xl text-var(--text-secondary) max-w-3xl mx-auto leading-relaxed">
+        Explore our most popular travel destinations around the world, carefully curated for unforgettable experiences
+      </p>
     </div>
-    <p class=" text-xl lg:text-2xl text-center mb-12">Explore our most popular travel destinations around the world</p>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {destinations.map((destination) => (
-            <div class="relative rounded-lg overflow-hidden ">
-                <img src={destination.image} alt={destination.title} class="w-full h-88 object-cover" />
-                <div class="absolute bottom-0 left-0 w-full bg-[#fc370099] font-semibold bg-opacity-50 text-[var(--secondary)] p-4">
-                    <h3 class="text-lg font-bold">{destination.title}</h3>
-                    <p class="text-sm">{destination.description}</p>
-                </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {destinations.map((destination, index) => (
+        <div class="destination-card shadow-xs border border-gray-200 group cursor-pointer" data-aos="fade-up" data-aos-delay={index * 100}>
+          <div class="relative overflow-hidden">
+            <img 
+              src={destination.image} 
+              alt={destination.title} 
+              class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" 
+            />
+            <div class="absolute top-4 left-4">
+              <span class="bg-white/90 backdrop-blur-sm text-var(--text-primary) px-3 py-1 rounded-full text-sm font-medium">
+                {destination.category}
+              </span>
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-var(--text-primary) mb-3 group-hover:text-var(--primary) transition-colors">
+              {destination.title}
+            </h3>
+            <p class="text-var(--text-secondary) leading-relaxed mb-4">
+              {destination.description}
+            </p>
+            <a href="/contact" class="inline-flex items-center text-var(--primary) font-semibold hover:text-var(--primary-dark) transition-colors">
+              Learn More
+              <svg class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
             </div>
         ))}
     </div>
 
-    
+    <div class="text-center mt-12">
+      <a href="/services" class="btn-primary">
+        View All Destinations
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CIRTOUREX PACKAGES SECTION -->
+<section class="relative min-h-screen bg-gradient-to-br from-var(--primary-dark) via-var(--primary) to-var(--secondary) overflow-hidden">
+  <!-- Background Pattern -->
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute inset-0" style="background-image: radial-gradient(circle at 25% 25%, rgba(255,255,255,0.1) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(255,255,255,0.1) 0%, transparent 50%);"></div>
 </div>
 
-               <!-- CIRTOURES PACKAGES SECTION -->
+  <div class="relative z-10 container py-24 ">
+    <!-- Header Section -->
+    <div class="text-center mb-20">
+      <div class="inline-flex items-center px-4 py-6 bg-white/10 backdrop-blur-sm rounded-full text-black/80 text-sm font-medium mb-6">
+        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        </svg>
+        Premium Solutions
+      </div>
+      <h2 class="text-5xl md:text-6xl font-bold text-black mb-6 leading-tight ">
+        Cirtourex 
+        <span class=" bg-clip-text text-black">Packages</span>
+      </h2>
+      <div class="w-32 h-1  mx-auto rounded-full mb-8"></div>
+      <p class=" text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed font-light">
+        Comprehensive immigration and travel solutions tailored to your specific needs and goals
+      </p>
+    </div>
 
-        
-  <div class="w-full min-h-screen relative">
-    <img 
-      src="https://media.istockphoto.com/id/1328597101/photo/bang-bao-beach-wooden-pier-in-koh-kood-trat-thailand.webp?a=1&b=1&s=612x612&w=0&k=20&c=6RYka994T7s97XKy37d6WMEWiEFzoau_039n4GcA6r8=" 
-      alt="Background" 
-      class="object-cover w-full h-full absolute inset-0"
-    />
-
-    <div class="absolute inset-0 bg-gradient-to-r from-[#08fef280] via-[#cc13c06f] to-[#fc370088]"></div>
-
-    <div class="container mx-auto relative  h-screen flex items-center justify-center">
-      <div class="w-full px-4 md:px-8   ">
-        <div class="text-center  absolute top-1/9 lg:top-1/7 left-0 right-0 z-10">
-          <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Cirtourex Packages</h2>
-          <div class="w-24 h-1 bg-red-500 mx-auto"></div>
+    <!-- Packages Carousel -->
+    <div class="relative max-w-6xl mx-auto ">
+      <div id="packages-carousel" class="overflow-hidden rounded-3xl ">
+        <div class="flex transition-transform duration-700 ease-out" id="packages-track">
+          <!-- Package 1: Global Work Permits -->
+          <div class="w-full flex-shrink-0 px-4 ">
+            <div class="relative group">
+              <div class="absolute inset-0 bg-gradient-to-br from-var(--primary)/20 to-var(--secondary)/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+              <div class="relative shadow-xs border border-gray-200 text-black backdrop-blur-xl p-10 md:p-16 ">
+                <div class="text-center max-w-3xl mx-auto">
+                  <!-- Package Badge -->
+                  <div class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-var(--primary) to-var(--secondary) text-black rounded-full text-sm font-semibold mb-8 shadow-lg">
+                    <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    Most Popular
         </div>
 
-        <div class="carousel items-center  flex justify-center mx-auto p-6 md:p-12">
-  <div class="carousel w-full py-10">
-    <div id="card1" class="carousel-item  w-full items-center flex justify-center h-screen">
-      <div class="flex flex-col relative w-full py-20 items-center  bg-white rounded-xl shadow-2xl">
-        <div class="text-center max-w-2xl mx-auto">
-          <h3 class="text-xl text-[var(--primary)] md:text-2xl font-bold mb-4">Global Work Permits Package</h3>
-          <div class="flex justify-center mb-4">
+                  <h3 class="text-3xl md:text-4xl font-bold text-var(--text-primary) mb-6">Global Work Permits Package</h3>
+                  
+                  <!-- Rating -->
+                  <div class="flex justify-center mb-8">
             {[1, 2, 3, 4, 5].map((star, index) => (
-              <span class={`text-xl ${index < 4 ? 'text-yellow-400' : 'text-gray-400'}`}>★</span>
-            ))}
+                      <svg class={`w-6 h-6 ${index < 4 ? 'text-yellow-400' : 'text-gray-300'}`} fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                      </svg>
+                    ))}
+                    <span class="ml-3 text-var(--text-secondary) font-semibold">4.8/5</span>
+                  </div>
+
+                  <!-- Features List -->
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10 text-left">
+                    <div class="flex items-center text-var(--text-secondary)">
+                      <svg class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                      </svg>
+                      Luxembourg & Malta
+                    </div>
+                    <div class="flex items-center text-var(--text-secondary)">
+                      <svg class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                      </svg>
+                      UK Work Permits
+                    </div>
+                    <div class="flex items-center text-var(--text-secondary)">
+                      <svg class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                      </svg>
+                      Document Preparation
+                    </div>
+                    <div class="flex items-center text-var(--text-secondary)">
+                      <svg class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                      </svg>
+                      Application Support
+                    </div>
           </div>
-          <p class="text-gray-600 text-base md:text-lg leading-relaxed">
-            "We offer visa assistance for countries like Luxembourg, Malta, and the UK. We help you navigate work eligibility and documentation with ease...."
-          </p>
-          <a href="/contact" class="inline-block mt-4 px-8 py-4 bg-[var(--primary)] text-white rounded-full hover:bg-[#fc0000] transition-colors duration-300">More Info</a>
+
+                  <p class="text-var(--text-secondary) text-lg leading-relaxed mb-10 italic">
+                    "Comprehensive visa assistance for European work permits. We navigate eligibility requirements and handle all documentation with expert precision."
+                  </p>
+                  
+                  <a href="/contact" class="btn-primary">
+                    Get Started Today
+                  </a>
+                </div>
         </div>
-         <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-        <a href="#card5" class="bg-opacity-50 text-[var(--primary)] rounded-full text-2xl border-none hover:text-red-700">❮</a>
-        <a href="#card2" class="bg-opacity-50 text-[var(--primary)] rounded-full text-2xl border-none hover:text-red-700">❯</a>
       </div>
       </div>
      
+          <!-- Package 2: New Zealand -->
+          <div class="w-full flex-shrink-0 px-4">
+            <div class="relative group">
+              <div class="absolute inset-0 bg-gradient-to-br from-var(--secondary)/20 to-var(--accent)/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+              <div class="relative shadow-xs border border-gray-200 text-black backdrop-blur-xl p-10 md:p-16">
+                <div class="text-center max-w-3xl mx-auto">
+                  <!-- Package Badge -->
+                  <div class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-var(--secondary) to-var(--accent) text-black rounded-full text-sm font-semibold mb-8 shadow-lg">
+                    <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                    </svg>
+                    Guaranteed Success
     </div>
 
-    <div id="card2" class="carousel-item h-screen w-full items-center flex justify-center">
-      <div class="flex flex-col items-center bg-white rounded-xl shadow-2xl relative w-full py-20">
-        <div class="text-center max-w-2xl mx-auto">
-          <h3 class="text-xl text-[var(--primary)] md:text-2xl font-bold mb-4">New Zealand  100% Visas Package</h3>
-          <div class="flex justify-center mb-4">
+                  <h3 class="text-3xl md:text-4xl font-bold text-var(--text-primary) mb-6">New Zealand 100% Visas Package</h3>
+                  
+                  <!-- Rating -->
+                  <div class="flex justify-center mb-8">
             {[1, 2, 3, 4, 5].map((star, index) => (
-              <span class={`text-xl ${index < 5 ? 'text-yellow-400' : 'text-gray-400'}`}>★</span>
-            ))}
+                      <svg class={`w-6 h-6 ${index < 5 ? 'text-yellow-400' : 'text-gray-300'}`} fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                      </svg>
+                    ))}
+                    <span class="ml-3 text-var(--text-secondary) font-semibold">5.0/5</span>
+                  </div>
+
+                  <!-- Features List -->
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10 text-left">
+                    <div class="flex items-center text-var(--text-secondary)">
+                      <svg class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                      </svg>
+                      100% Success Rate
+                    </div>
+                    <div class="flex items-center text-var(--text-secondary)">
+                      <svg class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                      </svg>
+                      Family Relocation
+                    </div>
+                    <div class="flex items-center text-var(--text-secondary)">
+                      <svg class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                      </svg>
+                      Complete Planning
+                    </div>
+                    <div class="flex items-center text-var(--text-secondary)">
+                      <svg class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                      </svg>
+                      Ongoing Support
+                    </div>
           </div>
-          <p class="text-gray-600 text-sm md:text-base leading-relaxed">
-            "Guaranteed visa processing support with complete relocation planning for individuals and families moving to New Zealand...."
-          </p>
-          <a href="/contact" class="inline-block mt-4 px-8 py-4 bg-[var(--primary)] text-white rounded-full hover:bg-[#fc0000] transition-colors duration-300">More Info</a>
+
+                  <p class="text-var(--text-secondary) text-lg leading-relaxed mb-10 italic">
+                    "Guaranteed visa processing with comprehensive relocation planning. We ensure your successful transition to New Zealand with complete family support."
+                  </p>
+                  
+                  <a href="/contact" class="btn-primary">
+                    Start Your Journey
+                  </a>
+                </div>
         </div>
-         <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-        <a href="#card1" class="bg-opacity-50 rounded-full text-2xl border-none hover:text-red-700 text-[var(--primary)]">❮</a>
-        <a href="#card3" class="bg-opacity-50 rounded-full text-2xl border-none hover:text-red-700 text-[var(--primary)]">❯</a>
       </div>
       </div>
      
+          <!-- Package 3: Schengen Conference -->
+          <div class="w-full flex-shrink-0 px-4">
+            <div class="relative group">
+              <div class="absolute inset-0 bg-gradient-to-br from-var(--accent)/20 to-var(--primary)/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+              <div class="relative shadow-xs border border-gray-200 text-black backdrop-blur-xl p-10 md:p-16">
+                <div class="text-center max-w-3xl mx-auto">
+                  <!-- Package Badge -->
+                  <div class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-var(--accent) to-var(--primary) text-black rounded-full text-sm font-semibold mb-8 shadow-lg">
+                    <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
+                    </svg>
+                    Professional
     </div>
 
-    <div id="card3" class="carousel-item h-screen w-full items-center flex justify-center">
-      <div class="flex flex-col items-center  bg-white rounded-xl shadow-2xl relative w-full py-20">
-        <div class="text-center max-w-2xl mx-auto">
-          <h3 class="text-xl text-[var(--primary)] md:text-2xl font-bold mb-4">Schengen Conference Visas Package</h3>
-          <div class="flex justify-center mb-4">
+                  <h3 class="text-3xl md:text-4xl font-bold text-var(--text-primary) mb-6">Schengen Conference Visas</h3>
+                  
+                  <!-- Rating -->
+                  <div class="flex justify-center mb-8">
             {[1, 2, 3, 4, 5].map((star, index) => (
-              <span class={`text-xl ${index < 5 ? 'text-yellow-400' : 'text-gray-400'}`}>★</span>
-            ))}
+                      <svg class={`w-6 h-6 ${index < 5 ? 'text-yellow-400' : 'text-gray-300'}`} fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                      </svg>
+                    ))}
+                    <span class="ml-3 text-var(--text-secondary) font-semibold">5.0/5</span>
+                  </div>
+
+                  <!-- Features List -->
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10 text-left">
+                    <div class="flex items-center text-var(--text-secondary)">
+                      <svg class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                      </svg>
+                      Academic Events
+                    </div>
+                    <div class="flex items-center text-var(--text-secondary)">
+                      <svg class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                      </svg>
+                      Business Conferences
+                    </div>
+                    <div class="flex items-center text-var(--text-secondary)">
+                      <svg class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                      </svg>
+                      Fast Processing
+                    </div>
+                    <div class="flex items-center text-var(--text-secondary)">
+                      <svg class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                      </svg>
+                      Expert Guidance
+                    </div>
           </div>
-          <p class="text-gray-600 text-sm md:text-base leading-relaxed">
-           "We help professionals and scholars attend international events with smooth Schengen visa support for conferences and summits...."
-          </p>
-          <a href="/contact" class="inline-block mt-4 px-8 py-4 bg-[var(--primary)] text-white rounded-full hover:bg-[#fc0000] transition-colors duration-300">More Info</a>
+
+                  <p class="text-var(--text-secondary) text-lg leading-relaxed mb-10 italic">
+                    "Smooth Schengen visa support for international conferences and academic events. We ensure professionals and scholars can attend global summits without hassle."
+                  </p>
+                  
+                    <a href="/contact" class="btn-primary">
+                    Apply Now
+                  </a>
+                </div>
         </div>
-        <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-        <a href="#card2" class="bg-opacity-50 rounded-full text-2xl border-none hover:text-red-700 text-[var(--primary)]">❮</a>
-        <a href="#card4" class="bg-opacity-50 rounded-full text-2xl border-none hover:text-red-700 text-[var(--primary)]">❯</a>
       </div>
       </div>
       
+          <!-- Package 4: Canada -->
+          <div class="w-full flex-shrink-0 px-4">
+            <div class="relative group">
+              <div class="absolute inset-0 bg-gradient-to-br from-var(--primary-dark)/20 to-var(--primary)/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+              <div class="relative shadow-xs border border-gray-200 text-black backdrop-blur-xl p-10 md:p-16">
+                <div class="text-center max-w-3xl mx-auto">
+                  <!-- Package Badge -->
+                  <div class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-var(--primary-dark) to-var(--primary) text-black rounded-full text-sm font-semibold mb-8 shadow-lg">
+                    <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838l-2.727 1.17 1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
+                    </svg>
+                    Study & PR
     </div>
 
-    <div id="card4" class="carousel-item h-screen w-full items-center flex justify-center">
-      <div class="flex flex-col items-center  bg-white rounded-xl shadow-2xl relative w-full py-20">
-        <div class="text-center max-w-2xl mx-auto">
-          <h3 class="text-xl text-[var(--primary)] md:text-2xl font-bold mb-4">Canada study, visit visa and PR for  health workers Package</h3>
-          <div class="flex justify-center mb-4">
+                  <h3 class="text-3xl md:text-4xl font-bold text-var(--text-primary) mb-6">Canada Study, Visit & PR Package</h3>
+                  
+                  <!-- Rating -->
+                  <div class="flex justify-center mb-8">
             {[1, 2, 3, 4, 5].map((star, index) => (
-              <span class={`text-xl ${index < 4 ? 'text-yellow-400' : 'text-gray-400'}`}>★</span>
-            ))}
+                      <svg class={`w-6 h-6 ${index < 4 ? 'text-yellow-400' : 'text-gray-300'}`} fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                      </svg>
+                    ))}
+                    <span class="ml-3 text-var(--text-secondary) font-semibold">4.6/5</span>
+                  </div>
+
+                  <!-- Features List -->
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10 text-left">
+                    <div class="flex items-center text-var(--text-secondary)">
+                      <svg class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                      </svg>
+                      Study Permits
+                    </div>
+                    <div class="flex items-center text-var(--text-secondary)">
+                      <svg class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                      </svg>
+                      Visit Visas
+                    </div>
+                    <div class="flex items-center text-var(--text-secondary)">
+                      <svg class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                      </svg>
+                      Healthcare PR
+                    </div>
+                    <div class="flex items-center text-var(--text-secondary)">
+                      <svg class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                      </svg>
+                      End-to-End Filing
+                    </div>
           </div>
-          <p class="text-gray-600 text-sm md:text-base leading-relaxed">
-            "Apply for study, visit, or permanent residency (healthcare workers only) with personalized application strategy and end-to-end filing..."
-          </p>
-          <a href="/contact" class="inline-block mt-4 px-8 py-4 bg-[var(--primary)] text-white rounded-full hover:bg-[#fc0000] transition-colors duration-300">More Info</a>
+
+                  <p class="text-var(--text-secondary) text-lg leading-relaxed mb-10 italic">
+                    "Comprehensive Canadian immigration solutions including study permits, visit visas, and permanent residency for healthcare professionals."
+                  </p>
+                  
+                  <a href="/contact" class="btn-primary">
+                    Explore Options
+                  </a>
+                </div>
         </div>
-         <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-        <a href="#card3" class="bg-opacity-50 rounded-full text-2xl border-none hover:text-red-700 text-[var(--primary)]">❮</a>
-        <a href="#card5" class="bg-opacity-50 rounded-full text-2xl border-none hover:text-red-700 text-[var(--primary)]">❯</a>
       </div>
       </div>
      
+          <!-- Package 5: Flight Booking -->
+          <div class="w-full flex-shrink-0 px-4">
+            <div class="relative group">
+              <div class="absolute inset-0 bg-gradient-to-br from-var(--secondary)/20 to-var(--accent)/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+              <div class="relative shadow-xs border border-gray-200 text-black backdrop-blur-xl p-10 md:p-16">
+                <div class="text-center max-w-3xl mx-auto">
+                  <!-- Package Badge -->
+                  <div class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-var(--secondary) to-var(--accent) text-black rounded-full text-sm font-semibold mb-8 shadow-lg">
+                    <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"/>
+                    </svg>
+                    Premium Service
     </div>
 
-
-    <div id="card5" class="carousel-item relative w-full items-center flex justify-center">
-      <div class="flex flex-col items-center bg-white rounded-xl shadow-2xl relative w-full py-20">
-        <div class="text-center max-w-2xl mx-auto">
-          <h3 class="text-xl text-[var(--primary)] md:text-2xl font-bold mb-4">Flight Booking Services Package</h3>
-          <div class="flex justify-center mb-4">
+                  <h3 class="text-3xl md:text-4xl font-bold text-var(--text-primary) mb-6">Flight Booking Services Package</h3>
+                  
+                  <!-- Rating -->
+                  <div class="flex justify-center mb-8">
             {[1, 2, 3, 4, 5].map((star, index) => (
-              <span class={`text-xl ${index < 5 ? 'text-yellow-400' : 'text-gray-400'}`}>★</span>
-            ))}
+                      <svg class={`w-6 h-6 ${index < 5 ? 'text-yellow-400' : 'text-gray-300'}`} fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                      </svg>
+                    ))}
+                    <span class="ml-3 text-var(--text-secondary) font-semibold">5.0/5</span>
+                  </div>
+
+                  <!-- Features List -->
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10 text-left">
+                    <div class="flex items-center text-var(--text-secondary)">
+                      <svg class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                      </svg>
+                      Best Prices
+                    </div>
+                    <div class="flex items-center text-var(--text-secondary)">
+                      <svg class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                      </svg>
+                      Visa Coordination
           </div>
-          <p class="text-gray-600 text-sm md:text-base leading-relaxed">
-            "Secure and cost-effective flight ticketing solutions, coordinated around your visa timeline and destination regulations..."
-          </p>
-          <a href="/contact" class="inline-block mt-4 px-8 py-4 bg-[var(--primary)] text-white rounded-full hover:bg-[#fc0000] transition-colors duration-300">More Info</a>
+                    <div class="flex items-center text-var(--text-secondary)">
+                      <svg class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                      </svg>
+                      ️24/7 Support
         </div>
-        <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-        <a href="#card4" class="bg-opacity-50 rounded-full text-2xl border-none hover:text-red-700 text-[var(--primary)]">❮</a>
-        <a href="#card1" class="bg-opacity-50 rounded-full text-2xl border-none hover:text-red-700 text-[var(--primary)]">❯</a>
+                    <div class="flex items-center text-var(--text-secondary)">
+                      <svg class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                      </svg>
+                      Flexible Changes
       </div>
       </div>
       
+                  <p class="text-var(--text-secondary) text-lg leading-relaxed mb-10 italic">
+                    "Premium flight booking services with competitive pricing and seamless coordination with your visa timeline and destination requirements."
+                  </p>
+                  
+                  <a href="/contact" class="btn-primary">
+                    Book Flights
+                  </a>
     </div>
   </div>
 </div>    
@@ -203,43 +455,183 @@ const destinations = [
     </div>
   </div>
 
+      <!-- Navigation Arrows -->
+      <button id="packages-prev-btn" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/90 backdrop-blur-sm text-var(--text-primary) rounded-full w-14 h-14 flex items-center justify-center hover:bg-white hover:scale-110 transition-all duration-300 shadow-xl z-10">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+        </svg>
+      </button>
+      
+      <button id="packages-next-btn" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/90 backdrop-blur-sm text-var(--text-primary) rounded-full w-14 h-14 flex items-center justify-center hover:bg-white hover:scale-110 transition-all duration-300 shadow-xl z-10">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+        </svg>
+      </button>
 
-                    <!-- ABOUT US SECTION -->
-<div class=" pt-[5rem] pb-20">
-    <div class="flex flex-wrap container   mx-auto items-center justify-center   ">
-  <!-- Left Image Section -->
-  <div class="md:w-1/2 w-full rounded-2xl  h-[100%]">
-    <img src="https://plus.unsplash.com/premium_photo-1663054311916-98ef24980a37?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cGFzc3BvcnR8ZW58MHx8MHx8fDA%3D" alt="about us" 
-      class="w-full h-[100%]  rounded-2xl "
-    />
+      <!-- Dots Indicator -->
+      <div class="flex justify-center mt-12 space-x-3">
+        <button class="packages-dot w-4 h-4 rounded-full bg-white/30 hover:bg-white/60 transition-all duration-300 active" data-slide="0"></button>
+        <button class="packages-dot w-4 h-4 rounded-full bg-white/30 hover:bg-white/60 transition-all duration-300" data-slide="1"></button>
+        <button class="packages-dot w-4 h-4 rounded-full bg-white/30 hover:bg-white/60 transition-all duration-300" data-slide="2"></button>
+        <button class="packages-dot w-4 h-4 rounded-full bg-white/30 hover:bg-white/60 transition-all duration-300" data-slide="3"></button>
+        <button class="packages-dot w-4 h-4 rounded-full bg-white/30 hover:bg-white/60 transition-all duration-300" data-slide="4"></button>
+      </div>
   </div>
 
-  <!-- Right Content Section -->
-  <div class="md:w-1/2 w-full p-12 flex flex-col justify-center space-y-1">
-    <p class="italic mb-3 font-medium text-[var(--primary)] text-lg">a few words</p>
-    <h2 class="text-5xl font-bold mb-6 text-[var(--primary)]">About <span class="">Us</span></h2>
-    <p class="flex flex-col space-y-1 text-lg leading-relaxed">
-     Cirtourex Global Limited is a trusted travel agency consulting firm, committed to helping individuals and professionals achieve their global travel and career ambitions. We specialize in providing expert guidance and seamless processing for a wide range of visas and immigration services.
-     <span>At Cirtourex Global Limited, we combine deep industry knowledge with personalized consulting to ensure every client experiences a smooth, transparent, and successful application process.
-
-Motto: Result is our aim
-
-When you choose us, you are not just selecting a service — you are partnering with a team dedicated to turning your travel goals into reality.</span>
-    </p>
-    <a
-      href="/about"
-      class="bg-[var(--primary)] text-white py-4 px-8 rounded-full mt-6 hover:bg-[#fc0000] transition-colors duration-300 w-fit flex items-center gap-4 text-lg">Learn More
-        <span class="text-lg">→</span>
+    <!-- Call to Action -->
+    <div class="text-center mt-4 bg-gray-100 py-10 mb-16">
+      <div class="bg-white/10 backdrop-blur-sm rounded-3xl p-8 md:p-12 max-w-4xl mx-auto border border-white/20">
+        <h3 class="text-3xl md:text-4xl font-bold text-black mb-6">Ready to Start Your Journey?</h3>
+        <p class="text-black/80 text-xl mb-8 leading-relaxed">
+          Join thousands of successful clients who have achieved their global dreams with our expert guidance
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <a href="/contact" class="btn-primary ">
+            Get Free Consultation
+          </a>
+          <a href="/services" class="btn-outline ">
+            View All Services
     </a>
   </div>
 </div>
-       
-        
- </div>
-    
-
-
-
-    
+    </div>
+  </div>
 </section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const carousel = document.getElementById('packages-carousel');
+  const track = document.getElementById('packages-track');
+  const prevBtn = document.getElementById('packages-prev-btn');
+  const nextBtn = document.getElementById('packages-next-btn');
+  const dots = document.querySelectorAll('.packages-dot');
+  
+  let currentSlide = 0;
+  const totalSlides = 5;
+  let autoplayInterval: NodeJS.Timeout | null = null;
+
+  function updateCarousel() {
+    if (!track) return;
+    const translateX = -currentSlide * 100;
+    track.style.transform = `translateX(${translateX}%)`;
+    
+    // Update dots
+    dots.forEach((dot, index) => {
+      dot.classList.toggle('active', index === currentSlide);
+      dot.classList.toggle('bg-white', index === currentSlide);
+      dot.classList.toggle('bg-white/50', index !== currentSlide);
+    });
+  }
+
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    updateCarousel();
+  }
+
+  function prevSlide() {
+    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+    updateCarousel();
+  }
+
+  function goToSlide(slideIndex: number) {
+    currentSlide = slideIndex;
+    updateCarousel();
+  }
+
+  function startAutoplay() {
+    if (autoplayInterval) {
+      clearInterval(autoplayInterval);
+    }
+    autoplayInterval = setInterval(nextSlide, 6000);
+  }
+
+  function stopAutoplay() {
+    if (autoplayInterval) {
+      clearInterval(autoplayInterval);
+      autoplayInterval = null;
+    }
+  }
+
+  // Event listeners
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      stopAutoplay();
+      prevSlide();
+      startAutoplay();
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      stopAutoplay();
+      nextSlide();
+      startAutoplay();
+    });
+  }
+
+  // Dot navigation
+  dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+      stopAutoplay();
+      goToSlide(index);
+      startAutoplay();
+    });
+  });
+
+  // Pause autoplay on hover
+  if (carousel) {
+    carousel.addEventListener('mouseenter', stopAutoplay);
+    carousel.addEventListener('mouseleave', startAutoplay);
+  }
+
+  // Start autoplay
+  startAutoplay();
+});
+</script>
+
+<style>
+  .destination-card {
+    transition: all var(--transition-normal);
+  }
+
+  .destination-card:hover {
+    transform: translateY(-8px);
+  }
+
+  /* Carousel styles */
+  #packages-carousel {
+    position: relative;
+  }
+
+  #packages-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .packages-dot.active {
+    background-color: white;
+    transform: scale(1.2);
+  }
+
+  /* Professional card shadows */
+  .card {
+    box-shadow: var(--shadow-lg);
+  }
+
+  .card:hover {
+    box-shadow: var(--shadow-xl);
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    #packages-prev-btn, #packages-next-btn {
+      width: 40px;
+      height: 40px;
+    }
+    
+    .card {
+      margin: 0 0.5rem;
+    }
+  }
+</style>
     

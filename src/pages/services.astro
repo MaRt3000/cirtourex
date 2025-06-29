@@ -5,66 +5,221 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="Our Services – Cirtourex Global Limited">
   <!-- Hero Section -->
-  <section class="bg-white">
-    <div class="carousel w-full">
-  <div class="carousel-item flex items-center justify-center relative w-full h-[500px] md:h-[800px]">
+  <section class="relative h-[80vh] overflow-hidden">
     <img
       src="https://media.istockphoto.com/id/2211775126/photo/coworkers-taking-selfies-with-their-passports-and-airplane-tickets-at-the-airport-point-of.jpg?s=612x612&w=0&k=20&c=VjuiDNHx6FVLBL8lncie9ZIW_wdKCSn9piBsCAbDiGM="
-      class="w-full h-full object-cover object-top" />
-
-    <div class="z-10 flex flex-col items-center justify-center absolute inset-0 text-white text-center px-4">
-      <div class="max-w-6xl mx-auto px-4 text-center">
-      <h1 class="text-4xl md:text-6xl font-bold mb-4 text-[var(--primary)]" style="font-family: var(--fontSecondary);">Explore Our Expertise</h1>
-      <p class="text-lg md:text-xl text-white max-w-3xl mx-auto bg-[#06666177] p-6 rounded-3xl">
-        At Cirtourex Global Limited, we transform international aspirations into real-world success. Explore our full suite of immigration and travel services built to guide your journey with precision, transparency, and care.
-      </p>
-    </div>
-    </div>
-  </div>
-</div>
+      class="w-full h-full object-cover object-top" 
+      alt="Our Services"
+    />
+    <div class="absolute inset-0 bg-black/70"></div>
     
+    <div class="absolute top-0 left-0 w-full z-50 h-full text-white text-center px-4">
+      <div class="flex flex-col items-center justify-center h-full pt-[20vh]">
+        <div class="max-w-4xl mx-auto">
+          <h1 class="text-4xl md:text-6xl font-bold mb-6 text-white leading-tight">
+            <span class="text-white">Explore Our</span>
+            <span class="gradient-text">Expertise</span>
+          </h1>
+          <p class="text-lg md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-8">
+            <span class="text-white">At Cirtourex Global Limited, we transform international aspirations into real-world success. Explore our full suite of immigration and travel services built to guide your journey with precision, transparency, and care.</span>
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mt-5">
+            <a href="/contact" class="btn-primary text-lg px-8 py-4">
+              Book a Consultation
+            </a>
+            <a href="/about" class="btn-outline text-lg px-8 py-4">
+              Learn More About Us
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- Service Index -->
-  <section class="py-20 bg-white">
-    <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-2xl lg:text-5xl font-bold text-[var(--primary)] text-center  mb-12">What We Do</h2>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Card Template -->
-        <div class="bg-white shadow-md   p-6 rounded-xl hover:shadow-xl transition" >
-          <div class="text-4xl text-teal-600 mb-4">🌍</div>
-          <h3 class="text-xl  font-semibold   mb-2 text-[var(--primary)]">Global Work Permits</h3>
-          <p class="text-gray-500">We offer visa assistance for countries like Luxembourg, Malta, and the UK. We help you navigate work eligibility and documentation with ease.</p>
+  <section class="section">
+    <div class="container">
+      <div class="text-center mb-16">
+        <h3 class="text-lg font-semibold text-var(--primary) mb-2 uppercase tracking-wider">Services</h3>
+        <h2 class="text-3xl md:text-4xl font-bold text-var(--text-primary) mb-6">What We Do</h2>
+        <p class="text-xl text-var(--text-secondary) max-w-3xl mx-auto">
+          Comprehensive immigration and travel solutions tailored to your unique needs and goals
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Global Work Permits -->
+        <div class="service-card shadow-xs border border-gray-200 p-8 group">
+          <div class="w-16 h-16 bg-gradient-to-br from-var(--primary)/10 to-var(--secondary)/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <span class="text-3xl">🌍</span>
+          </div>
+          <h3 class="text-xl font-semibold text-var(--text-primary) mb-4 group-hover:text-var(--primary) transition-colors">
+            Global Work Permits
+          </h3>
+          <p class="text-var(--text-secondary) leading-relaxed">
+            We offer visa assistance for countries like Luxembourg, Malta, and the UK. We help you navigate work eligibility and documentation with ease.
+          </p>
+          <div class="mt-6 pt-4 border-t border-var(--border)">
+            <ul class="space-y-2 text-sm text-var(--text-secondary)">
+              <li class="flex items-center">
+                <span class="w-2 h-2 bg-var(--primary) rounded-full mr-3"></span>
+                Luxembourg Work Permits
+              </li>
+              <li class="flex items-center">
+                <span class="w-2 h-2 bg-var(--primary) rounded-full mr-3"></span>
+                Malta Employment Visas
+              </li>
+              <li class="flex items-center">
+                <span class="w-2 h-2 bg-var(--primary) rounded-full mr-3"></span>
+                UK Work & Business Visas
+              </li>
+            </ul>
+          </div>
         </div>
 
-        <div class="bg-white shadow-md p-6 rounded-xl hover:shadow-xl transition">
-          <div class="text-4xl text-teal-600 mb-4">🇳🇿</div>
-          <h3 class="text-xl font-semibold text-[var(--primary)] mb-2">New Zealand Relocation</h3>
-          <p class="">Guaranteed visa processing support with complete relocation planning for individuals and families moving to New Zealand.</p>
+        <!-- New Zealand Relocation -->
+        <div class="service-card shadow-xs border border-gray-200 p-8 group">
+          <div class="w-16 h-16 bg-gradient-to-br from-var(--primary)/10 to-var(--secondary)/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <span class="text-3xl">🇳🇿</span>
+          </div>
+          <h3 class="text-xl font-semibold text-var(--text-primary) mb-4 group-hover:text-var(--primary) transition-colors">
+            New Zealand Relocation
+          </h3>
+          <p class="text-var(--text-secondary) leading-relaxed">
+            Guaranteed visa processing support with complete relocation planning for individuals and families moving to New Zealand.
+          </p>
+          <div class="mt-6 pt-4 border-t border-var(--border)">
+            <ul class="space-y-2 text-sm text-var(--text-secondary)">
+              <li class="flex items-center">
+                <span class="w-2 h-2 bg-var(--primary) rounded-full mr-3"></span>
+                100% Processing Guarantee
+              </li>
+              <li class="flex items-center">
+                <span class="w-2 h-2 bg-var(--primary) rounded-full mr-3"></span>
+                Complete Relocation Support
+              </li>
+              <li class="flex items-center">
+                <span class="w-2 h-2 bg-var(--primary) rounded-full mr-3"></span>
+                Family Visa Packages
+              </li>
+            </ul>
+          </div>
         </div>
 
-        <div class="bg-white shadow-md p-6 rounded-xl hover:shadow-xl transition">
-          <div class="text-4xl text-teal-600 mb-4">🇪🇺</div>
-          <h3 class="text-xl font-semibold text-[var(--primary)] mb-2">Schengen Conference Visas</h3>
-          <p class="">We help professionals and scholars attend international events with smooth Schengen visa support for conferences and summits.</p>
+        <!-- Schengen Conference Visas -->
+        <div class="service-card shadow-xs border border-gray-200 p-8 group">
+          <div class="w-16 h-16 bg-gradient-to-br from-var(--primary)/10 to-var(--secondary)/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <span class="text-3xl">🇪🇺</span>
+          </div>
+          <h3 class="text-xl font-semibold text-var(--text-primary) mb-4 group-hover:text-var(--primary) transition-colors">
+            Schengen Conference Visas
+          </h3>
+          <p class="text-var(--text-secondary) leading-relaxed">
+            We help professionals and scholars attend international events with smooth Schengen visa support for conferences and summits.
+          </p>
+          <div class="mt-6 pt-4 border-t border-var(--border)">
+            <ul class="space-y-2 text-sm text-var(--text-secondary)">
+              <li class="flex items-center">
+                <span class="w-2 h-2 bg-var(--primary) rounded-full mr-3"></span>
+                Fast-track Processing
+              </li>
+              <li class="flex items-center">
+                <span class="w-2 h-2 bg-var(--primary) rounded-full mr-3"></span>
+                Conference Documentation
+              </li>
+              <li class="flex items-center">
+                <span class="w-2 h-2 bg-var(--primary) rounded-full mr-3"></span>
+                Multi-country Support
+              </li>
+            </ul>
+          </div>
         </div>
 
-        <div class="bg-white shadow-md p-6 rounded-xl hover:shadow-xl transition">
-          <div class="text-4xl text-teal-600 mb-4">🇨🇦</div>
-          <h3 class="text-xl font-semibold text-[var(--primary)] mb-2">Canada Immigration</h3>
-          <p class="">Apply for study, visit, or permanent residency (healthcare workers only) with personalized application strategy and end-to-end filing.</p>
+        <!-- Canada Immigration -->
+        <div class="service-card shadow-xs border border-gray-200 p-8 group">
+          <div class="w-16 h-16 bg-gradient-to-br from-var(--primary)/10 to-var(--secondary)/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <span class="text-3xl">🇨🇦</span>
+          </div>
+          <h3 class="text-xl font-semibold text-var(--text-primary) mb-4 group-hover:text-var(--primary) transition-colors">
+            Canada Immigration
+          </h3>
+          <p class="text-var(--text-secondary) leading-relaxed">
+            Apply for study, visit, or permanent residency (healthcare workers only) with personalized application strategy and end-to-end filing.
+          </p>
+          <div class="mt-6 pt-4 border-t border-var(--border)">
+            <ul class="space-y-2 text-sm text-var(--text-secondary)">
+              <li class="flex items-center">
+                <span class="w-2 h-2 bg-var(--primary) rounded-full mr-3"></span>
+                Study Visas
+              </li>
+              <li class="flex items-center">
+                <span class="w-2 h-2 bg-var(--primary) rounded-full mr-3"></span>
+                Visit Visas
+              </li>
+              <li class="flex items-center">
+                <span class="w-2 h-2 bg-var(--primary) rounded-full mr-3"></span>
+                Healthcare PR
+              </li>
+            </ul>
+          </div>
         </div>
 
-        <div class="bg-white shadow-md p-6 rounded-xl hover:shadow-xl transition">
-          <div class="text-4xl text-teal-600 mb-4">✈️</div>
-          <h3 class="text-xl font-semibold text-[var(--primary)] mb-2">Flight Booking Services</h3>
-          <p class="">Secure and cost-effective flight ticketing solutions, coordinated around your visa timeline and destination regulations.</p>
+        <!-- Flight Booking Services -->
+        <div class="service-card shadow-xs border border-gray-200 p-8 group">
+          <div class="w-16 h-16 bg-gradient-to-br from-var(--primary)/10 to-var(--secondary)/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <span class="text-3xl">✈️</span>
+          </div>
+          <h3 class="text-xl font-semibold text-var(--text-primary) mb-4 group-hover:text-var(--primary) transition-colors">
+            Flight Booking Services
+          </h3>
+          <p class="text-var(--text-secondary) leading-relaxed">
+            Secure and cost-effective flight ticketing solutions, coordinated around your visa timeline and destination regulations.
+          </p>
+          <div class="mt-6 pt-4 border-t border-var(--border)">
+            <ul class="space-y-2 text-sm text-var(--text-secondary)">
+              <li class="flex items-center">
+                <span class="w-2 h-2 bg-var(--primary) rounded-full mr-3"></span>
+                Competitive Rates
+              </li>
+              <li class="flex items-center">
+                <span class="w-2 h-2 bg-var(--primary) rounded-full mr-3"></span>
+                Visa Timeline Coordination
+              </li>
+              <li class="flex items-center">
+                <span class="w-2 h-2 bg-var(--primary) rounded-full mr-3"></span>
+                24/7 Support
+              </li>
+            </ul>
+          </div>
         </div>
 
-        <div class="bg-white shadow-md p-6 rounded-xl hover:shadow-xl transition">
-          <div class="text-4xl text-teal-600 mb-4">🧭</div>
-          <h3 class="text-xl font-semibold text-[var(--primary)] mb-2">Visa Advisory</h3>
-          <p class="">Not sure what you qualify for? Our experts evaluate your profile and recommend the best visa pathways to achieve your goals.</p>
+        <!-- Visa Advisory -->
+        <div class="service-card shadow-xs border border-gray-200 p-8 group">
+          <div class="w-16 h-16 bg-gradient-to-br from-var(--primary)/10 to-var(--secondary)/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <span class="text-3xl">🧭</span>
+          </div>
+          <h3 class="text-xl font-semibold text-var(--text-primary) mb-4 group-hover:text-var(--primary) transition-colors">
+            Visa Advisory
+          </h3>
+          <p class="text-var(--text-secondary) leading-relaxed">
+            Not sure what you qualify for? Our experts evaluate your profile and recommend the best visa pathways to achieve your goals.
+          </p>
+          <div class="mt-6 pt-4 border-t border-var(--border)">
+            <ul class="space-y-2 text-sm text-var(--text-secondary)">
+              <li class="flex items-center">
+                <span class="w-2 h-2 bg-var(--primary) rounded-full mr-3"></span>
+                Free Assessment
+              </li>
+              <li class="flex items-center">
+                <span class="w-2 h-2 bg-var(--primary) rounded-full mr-3"></span>
+                Personalized Strategy
+              </li>
+              <li class="flex items-center">
+                <span class="w-2 h-2 bg-var(--primary) rounded-full mr-3"></span>
+                Expert Consultation
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -72,45 +227,94 @@ import Layout from '../layouts/Layout.astro';
 
 <TestimonialCard />
 
-
   <!-- FAQ SECTION -->
-  <section class="py-20 bg-gradient-to-br from-teal-50 to-white">
-    <div class="max-w-5xl mx-auto px-4">
-      <h2 class="text-2xl lg:text-5xl text-[var(--primary)] font-bold text-center mb-12">Frequently Asked Questions</h2>
-      <div class="space-y-6">
+  <section class="section-alt ">
+   <div class="bg-white py-14">
+    <div class="container">
+      <div class="text-center mb-16">
+        <h3 class="text-lg font-semibold text-var(--primary) mb-2 uppercase tracking-wider">FAQ</h3>
+        <h2 class="text-3xl md:text-4xl font-bold text-var(--text-primary) mb-6">Frequently Asked Questions</h2>
+        <p class="text-xl text-var(--text-secondary) max-w-3xl mx-auto">
+          Get answers to common questions about our services and visa processes
+        </p>
+      </div>
+
+      <div class="max-w-4xl mx-auto space-y-4">
         {[
-          ["How long does visa processing take?", "Depending on the country, between 2–8 weeks. We’ll advise on your specific case."],
-          ["Can I apply if I’ve been denied before?", "Yes, we help with visa re-application strategies and documentation corrections."],
-          ["What documents do I need?", "It depends on your destination and visa type. We’ll provide a checklist after your consultation."],
-          ["Do you offer express visa services?", "Yes, we support expedited visa options for eligible countries and urgent cases."],
-          ["Can I trust you with my passport?", "Absolutely. We follow strict data and document protection standards."],
-          ["Do you help with job matching?", "We assist with visa types related to jobs, but don’t provide recruitment services."],
-          ["How do I know I’m eligible?", "We offer free assessments to check your visa or residency eligibility."],
-          ["Do you offer services outside Nigeria?", "Yes! We serve clients worldwide through virtual consultations."],
-          ["Can I get both visa and flight booking from you?", "Yes, we provide full relocation packages including booking, paperwork, and follow-up."],
-          ["Do you give refund if visa is denied?", "We refund unused service charges in some cases. Consult terms before signing."],
+          ["How long does visa processing take?", "Depending on the country, between 2–8 weeks. We'll advise on your specific case and provide realistic timelines based on current processing times."],
+          ["Can I apply if I've been denied before?", "Yes, we help with visa re-application strategies and documentation corrections. Our experts analyze previous applications to identify and address issues."],
+          ["What documents do I need?", "It depends on your destination and visa type. We'll provide a comprehensive checklist after your consultation and guide you through document preparation."],
+          ["Do you offer express visa services?", "Yes, we support expedited visa options for eligible countries and urgent cases. We'll assess your situation and recommend the best approach."],
+          ["Can I trust you with my passport?", "Absolutely. We follow strict data and document protection standards with secure handling procedures and confidentiality protocols."],
+          ["Do you help with job matching?", "We assist with visa types related to jobs, but don't provide recruitment services. We focus on visa and immigration support."],
+          ["How do I know I'm eligible?", "We offer free assessments to check your visa or residency eligibility. Our experts evaluate your profile and provide honest recommendations."],
+          ["Do you offer services outside Nigeria?", "Yes! We serve clients worldwide through virtual consultations and digital document processing."],
+          ["Can I get both visa and flight booking from you?", "Yes, we provide full relocation packages including booking, paperwork, and follow-up support throughout your journey."],
+          ["Do you give refund if visa is denied?", "We refund unused service charges in some cases. Our terms are transparent and we discuss refund policies before engagement."],
         ].map(([q, a], index) => (
-          <details class="bg-white rounded-lg shadow-sm p-4 group">
-            <summary class="cursor-pointer text-lg font-semibold  group-open:text-teal-700">
+          <details class="faq-item shadow-xs border border-gray-200 p-6 group cursor-pointer">
+            <summary class="cursor-pointer text-lg font-semibold text-var(--text-primary) group-open:text-var(--primary) transition-colors flex items-center justify-between">
               {q}
+              <svg class="w-5 h-5 transform group-open:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
             </summary>
-            <p class="mt-2 ">{a}</p>
+            <p class="mt-4 text-var(--text-secondary) leading-relaxed">{a}</p>
           </details>
         ))}
       </div>
     </div>
+   </div>
   </section>
 
   <!-- Final CTA -->
-  <section class="text-center py-16 bg-white">
-    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-[var(--primary)]">Start Your Journey With Confidence</h2>
-    <p class="text-lg mb-8 max-w-2xl mx-auto">Let Cirtourex Global Limited be your partner in global relocation. Consult us today and take the first step toward your international future.</p>
-    <a href="/contact" class="inline-block bg-[var(--primary)] text-white px-8 py-4 rounded-full text-lg shadow hover:bg-[#fc0000] transition-colors duration-300">
+  <section class="section">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-var(--text-primary) mb-6">Start Your Journey With Confidence</h2>
+        <p class="text-xl text-var(--text-secondary) mb-8 max-w-3xl mx-auto leading-relaxed">
+          Let Cirtourex Global Limited be your partner in global relocation. Consult us today and take the first step toward your international future.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/contact" class="btn-primary text-lg px-8 py-4">
       Book a Consultation
     </a>
+          <a href="/about" class="btn-outline text-lg px-8 py-4">
+            Learn More About Us
+          </a>
+        </div>
+      </div>
+    </div>
   </section>
-
-  
 </Layout>
+
+<style>
+
+
+
+
+
+
+
+.faq-item[open] {
+  border-color: var(--primary);
+}
+
+/* Professional card shadows */
+.card {
+  box-shadow: var(--shadow-lg);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-xl);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .grid {
+    gap: 1.5rem;
+  }
+}
+</style>
 
 
