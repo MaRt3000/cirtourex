@@ -9,16 +9,40 @@ import '../styles/global.css';
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="Cirtourex Global Limited - Professional visa, immigration, and travel services. Your trusted partner for global relocation." />
+		<meta name="keywords" content="visa services, immigration, travel, relocation, work permits, study visas" />
+		<meta name="author" content="Cirtourex Global Limited" />
+		
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://cirtourex.com/" />
+		<meta property="og:title" content="Cirtourex Global Limited" />
+		<meta property="og:description" content="Professional visa, immigration, and travel services. Your trusted partner for global relocation." />
+		<meta property="og:image" content="/og-image.jpg" />
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content="https://cirtourex.com/" />
+		<meta property="twitter:title" content="Cirtourex Global Limited" />
+		<meta property="twitter:description" content="Professional visa, immigration, and travel services. Your trusted partner for global relocation." />
+		<meta property="twitter:image" content="/og-image.jpg" />
+
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Cirtourex Global</title>
+		<title>Cirtourex Global Limited - Professional Visa & Immigration Services</title>
+		
+		<!-- Preload critical fonts -->
+		<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+		<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap"></noscript>
 	</head>
-	<Header />
-	<body class="bg-white pt-20">
-		<slot />
+	<body class="bg-white">
+		<Header />
+		<main class="">
+			<slot />
+		</main>
+		<Footer />
 	</body>
-	<Footer />
 </html>
 
 <style>
@@ -26,9 +50,57 @@ import '../styles/global.css';
 	body {
 		margin: 0;
 		width: 100%;
-		height: 100%;
-		background-color: #f0f0f0;
-		color: black;
-		
+		min-height: 100vh;
+		background-color: var(--background);
+		color: var(--text-primary);
+		font-family: var(--font-primary);
+		line-height: 1.6;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+
+	/* Smooth scrolling for anchor links */
+	html {
+		scroll-behavior: smooth;
+	}
+
+	/* Professional focus styles */
+	*:focus {
+		outline: 2px solid var(--primary);
+		outline-offset: 2px;
+	}
+
+	/* Loading states */
+	.loading {
+		opacity: 0.7;
+		pointer-events: none;
+	}
+
+	/* Professional transitions */
+	* {
+		transition: color var(--transition-fast), background-color var(--transition-fast), border-color var(--transition-fast);
+	}
+
+	/* Improved text rendering */
+	body {
+		text-rendering: optimizeLegibility;
+	}
+
+	/* Professional scrollbar */
+	::-webkit-scrollbar {
+		width: 8px;
+	}
+
+	::-webkit-scrollbar-track {
+		background: var(--background-alt);
+	}
+
+	::-webkit-scrollbar-thumb {
+		background: var(--border);
+		border-radius: 4px;
+	}
+
+	::-webkit-scrollbar-thumb:hover {
+		background: var(--text-muted);
 	}
 </style>

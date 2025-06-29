@@ -1,54 +1,211 @@
 ---
 
+const benefits = [
+  {
+    icon: "🎯",
+    title: "Personalized Plans",
+    description: "Tailored relocation strategies designed specifically for your goals and profile"
+  },
+  {
+    icon: "👨‍💼",
+    title: "Professional Support",
+    description: "Expert guidance for student, skilled worker, and family visa applications"
+  },
+  {
+    icon: "🎓",
+    title: "Academic Guidance",
+    description: "University admission support and comprehensive job-matching assistance"
+  },
+  {
+    icon: "✈️",
+    title: "Complete Journey",
+    description: "Pre-departure training and post-arrival settlement support"
+  },
+  {
+    icon: "📱",
+    title: "Real-time Updates",
+    description: "Transparent process with continuous communication and progress tracking"
+  },
+  {
+    icon: "🌍",
+    title: "Global Network",
+    description: "Established partnerships with institutions and employers worldwide"
+  }
+];
 
 ---
 
-
-          <!--  Begin Your Relocation -->
-
-
-<section class="container mx-auto py-20 px-6 md:px-16 font-sans">
-  <div class=" mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-    <!-- Text Summary -->
+<!-- RELOCATION JOURNEY SECTION -->
+<section class="section">
+  <div class="container">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <!-- Content -->
+      <div class="space-y-8">
    <div>
-      <h2 class="text-4xl md:text-5xl font-bold leading-tight mb-12 text-[var(--primary)]">
-       Begin Your Relocation Journey with Confidence
+          <h3 class="text-lg font-semibold text-var(--primary) mb-2 uppercase tracking-wider">Relocation</h3>
+          <h2 class="text-4xl md:text-5xl font-bold text-var(--text-primary) mb-6 leading-tight">
+            Begin Your Relocation Journey with 
+            <span class="gradient-text">Confidence</span>
       </h2>
-     
+        </div>
 
-      <p class="text-lg mb-8">
-        Are you dreaming of starting a new life abroad? Whether you're aiming for a quality education, career advancement, global exposure, or a better future for your family — <strong class="font-semibold text-[var(--primary)]">Cirtourex Global Limited</strong> is here to turn your dreams into a successful relocation journey.
-      </p>
+        <p class="text-xl text-var(--text-secondary) leading-relaxed">
+          Are you dreaming of starting a new life abroad? Whether you're aiming for quality education, career advancement, global exposure, or a better future for your family — 
+          <strong class="text-var(--primary)">Cirtourex Global Limited</strong> is here to turn your dreams into a successful relocation journey.
+        </p>
 
-      <!-- <p class="text-md  mb-4">
-        With shifting immigration policies and increasing global opportunities, this is the moment to take action. Our experienced consultants are dedicated to helping you move legally, strategically, and confidently.
-      </p> -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {benefits.map((benefit, index) => (
+            <div class="benefit-item flex items-start space-x-4 group" data-aos="fade-up" data-aos-delay={index * 100}>
+              <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-var(--primary)/10 to-var(--secondary)/10 rounded-xl flex items-center justify-center text-2xl group-hover:scale-110 transition-transform duration-300">
+                {benefit.icon}
+              </div>
+              <div>
+                <h4 class="font-semibold text-var(--text-primary) mb-2 group-hover:text-var(--primary) transition-colors">
+                  {benefit.title}
+                </h4>
+                <p class="text-var(--text-secondary) text-sm leading-relaxed">
+                  {benefit.description}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
 
-      <h3 class="text-xl font-semibold mt-12 mb-6 text-[var(--primary)]">Why Choose Cirtourex?</h3>
-      <ul class="list-disc list-inside mb-8 space-y-4">
-        <li> Personalized relocation plans tailored to your goals</li>
-        <li> Professional support for student, skilled worker, or family visas</li>
-        <li> University admission guidance and job-matching support</li>
-        <li> Pre-departure training and post-arrival settlement tips</li>
-        <li> Transparent process with real-time updates</li>
-      </ul>
+        <div class="bg-gradient-to-r from-var(--primary)/5 to-var(--secondary)/5 p-6 rounded-2xl border border-var(--primary)/10">
+          <p class="text-var(--text-secondary) leading-relaxed">
+            We've successfully helped hundreds of clients relocate to countries like 
+            <strong class="text-var(--primary)"> Canada, the UK, New Zealand, Luxembourg, Malta</strong>, and more. 
+            Many are now thriving — studying, working, or raising families abroad — thanks to the right start with Cirtourex.
+          </p>
+        </div>
 
-      <p class="text-md mb-12">
-        We've successfully helped hundreds of clients relocate to countries like <strong class="text-[var(--primary)]">Canada, the UK, Newzealand, Luxembourg, Malta</strong>, etc. Many of them are now thriving — studying, working, or raising families abroad — thanks to the right start with Cirtourex.
-      </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="/contact" class="btn-primary text-lg px-8 py-4">
+            Start Your Relocation Plan
+          </a>
+          <a href="/services" class="btn-outline text-lg px-8 py-4">
+            View Our Services
+          </a>
+        </div>
+      </div>
 
-      <!-- <p class="text-md  mb-6">
-        You don't have to figure it out alone. We walk the journey with you — from consultation to boarding your flight and beyond. Your goals are valid, and with the right guidance, they are absolutely achievable.
-      </p> -->
+      <!-- Image -->
+      <div class="relative">
+        <div class="relative overflow-hidden rounded-3xl shadow-2xl">
+          <img 
+            src="https://images.unsplash.com/photo-1553697388-94e804e2f0f6?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHRyYXZlbCUyMGFnZW5jeXxlbnwwfHwwfHx8MA%3D%3D" 
+            alt="Relocation with Cirtourex" 
+            class="w-full h-[600px] object-cover transform hover:scale-105 transition-transform duration-700" 
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+        </div>
+        
+        <!-- Floating Stats Card -->
+        <div class="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-6 max-w-xs">
+          <div class="flex items-center space-x-4">
+            <div class="w-12 h-12 bg-gradient-to-br from-var(--primary) to-var(--primary-dark) rounded-xl flex items-center justify-center">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+              </svg>
+            </div>
+            <div>
+              <p class="text-2xl font-bold text-var(--text-primary)">500+</p>
+              <p class="text-sm text-var(--text-secondary)">Successful Relocations</p>
+            </div>
+          </div>
+        </div>
 
-      <a href="/contact" class="inline-block bg-[var(--primary)] text-white py-6 px-12 rounded-full text-lg shadow hover:bg-[#fc0000] transition-colors duration-300">
-        Start Your Relocation Plan Today
-      </a>
+        <!-- Floating Success Rate Card -->
+        <div class="absolute -top-6 -right-6 bg-white rounded-2xl shadow-xl p-6 max-w-xs">
+          <div class="flex items-center space-x-4">
+            <div class="w-12 h-12 bg-gradient-to-br from-var(--secondary) to-var(--secondary-dark) rounded-xl flex items-center justify-center">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <div>
+              <p class="text-2xl font-bold text-var(--text-primary)">98%</p>
+              <p class="text-sm text-var(--text-secondary)">Success Rate</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <!-- Image -->
-    <div class="w-full h-[100%]">
-      <img src="https://images.unsplash.com/photo-1553697388-94e804e2f0f6?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHRyYXZlbCUyMGFnZW5jeXxlbnwwfHwwfHx8MA%3D%3D" alt="Relocation with Cirtourex" class="w-full h-[100%] rounded-4xl " />
+    <!-- Success Stories Preview -->
+    <div class="mt-20 text-center">
+      <h3 class="text-2xl md:text-3xl font-bold text-var(--text-primary) mb-8">Success Stories</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="success-story-card shadow-xs border border-gray-200 p-6 text-center">
+          <div class="w-16 h-16 bg-gradient-to-br from-var(--primary)/10 to-var(--secondary)/10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-var(--primary)" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 012 2v6a2 2 0 01-2 2H8a2 2 0 01-2-2V8a2 2 0 012-2V6"></path>
+            </svg>
+          </div>
+          <h4 class="font-semibold text-var(--text-primary) mb-2">Study Abroad</h4>
+          <p class="text-var(--text-secondary) text-sm">Students successfully enrolled in top universities worldwide</p>
+        </div>
+
+        <div class="success-story-card shadow-xs border border-gray-200 p-6 text-center">
+          <div class="w-16 h-16 bg-gradient-to-br from-var(--primary)/10 to-var(--secondary)/10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-var(--primary)" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 012 2v6a2 2 0 01-2 2H8a2 2 0 01-2-2V8a2 2 0 012-2V6"></path>
+            </svg>
+          </div>
+          <h4 class="font-semibold text-var(--text-primary) mb-2">Work Permits</h4>
+          <p class="text-var(--text-secondary) text-sm">Professionals securing work permits in leading countries</p>
+        </div>
+
+        <div class="success-story-card shadow-xs border border-gray-200 p-6 text-center">
+          <div class="w-16 h-16 bg-gradient-to-br from-var(--primary)/10 to-var(--secondary)/10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-var(--primary)" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+            </svg>
+          </div>
+          <h4 class="font-semibold text-var(--text-primary) mb-2">Family Relocation</h4>
+          <p class="text-var(--text-secondary) text-sm">Families successfully relocated with complete support</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
+
+<style>
+.benefit-item {
+  transition: all var(--transition-normal);
+}
+
+.benefit-item:hover {
+  transform: translateX(8px);
+}
+
+.success-story-card {
+  transition: all var(--transition-normal);
+}
+
+.success-story-card:hover {
+  transform: translateY(-8px);
+}
+
+/* Professional card shadows */
+.card {
+  box-shadow: var(--shadow-lg);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-xl);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .grid {
+    gap: 2rem;
+  }
+  
+  .floating-card {
+    position: static;
+    margin: 1rem 0;
+  }
+}
+</style>
